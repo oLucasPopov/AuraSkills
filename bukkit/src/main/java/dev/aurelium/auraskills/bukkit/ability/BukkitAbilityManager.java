@@ -17,6 +17,7 @@ import dev.aurelium.auraskills.bukkit.skills.healing.HealingAbilities;
 import dev.aurelium.auraskills.bukkit.skills.husbandry.HusbandryAbilities;
 import dev.aurelium.auraskills.bukkit.skills.mining.MiningAbilities;
 import dev.aurelium.auraskills.bukkit.skills.smithing.SmithingAbilities;
+import dev.aurelium.auraskills.bukkit.skills.trading.TradingAbilities;
 import dev.aurelium.auraskills.bukkit.user.BukkitUser;
 import dev.aurelium.auraskills.common.ability.AbilityManager;
 import dev.aurelium.auraskills.common.config.Option;
@@ -52,6 +53,7 @@ public class BukkitAbilityManager extends AbilityManager {
         // === Fork skills: trading, husbandry, smithing ===
         registerAbilityImpl(new SmithingAbilities(plugin));
         registerAbilityImpl(new HusbandryAbilities(plugin));
+        registerAbilityImpl(new TradingAbilities(plugin));
     }
 
     @Override

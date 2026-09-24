@@ -48,6 +48,8 @@ public class TradingLeveler extends SourceLeveler {
 
         ItemStack result = event.getCurrentItem();
         if (result == null || result.getType().isAir()) return;
+        // Only grant XP when the click actually takes the trade result (blocks occupied-cursor spam clicks)
+        if (failsClickChecks(event)) return;
 
         MerchantRecipe recipe = inventory.getSelectedRecipe();
         if (recipe == null) return;
@@ -99,9 +101,11 @@ public class TradingLeveler extends SourceLeveler {
             if (source.getTrigger() != TradingTrigger.PIGLIN_BARTER) continue;
 
             double total = 0;
+            String merchantKey = "piglin:" + event.getEntity().getUniqueId();
             for (ItemStack outcome : event.getOutcome()) {
                 if (source.getBarterItem() == null || source.getBarterItem().equalsIgnoreCase(outcome.getType().name())) {
-                    total += source.getXp() * outcome.getAmount();
+                    double decay = recordAndGetDecay(player.getUniqueId(), merchantKey, outcome.getType().name());
+                    total += source.getXp() * outcome.getAmount() * decay;
                 }
             }
             if (total <= 0) continue;

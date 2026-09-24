@@ -13,6 +13,7 @@ import org.mockbukkit.mockbukkit.ServerMock;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -46,5 +47,14 @@ public class TradingSkillTest {
         for (TradingXpSource.TradingTrigger trigger : TradingXpSource.TradingTrigger.values()) {
             assertTrue(sources.stream().anyMatch(s -> s.source().getTrigger() == trigger), "Missing trigger " + trigger);
         }
+    }
+
+    @Test
+    void testTradeDecayMultiplier() {
+        assertEquals(1.0, dev.aurelium.auraskills.bukkit.source.TradingLeveler.computeDecayMultiplier(0));
+        assertEquals(1.0, dev.aurelium.auraskills.bukkit.source.TradingLeveler.computeDecayMultiplier(1));
+        assertEquals(0.5, dev.aurelium.auraskills.bukkit.source.TradingLeveler.computeDecayMultiplier(2));
+        assertEquals(0.25, dev.aurelium.auraskills.bukkit.source.TradingLeveler.computeDecayMultiplier(3));
+        assertEquals(0.1, dev.aurelium.auraskills.bukkit.source.TradingLeveler.computeDecayMultiplier(10));
     }
 }
