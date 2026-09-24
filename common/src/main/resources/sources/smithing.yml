@@ -1,0 +1,150 @@
+sources:
+  netherite_upgrade:
+    type: smithing
+    addition: netherite_ingot
+    xp: 50.0
+    menu_item:
+      material: netherite_chestplate
+  armor_trim:
+    type: smithing
+    templates:
+      - sentry_armor_trim_smithing_template
+      - vex_armor_trim_smithing_template
+      - wild_armor_trim_smithing_template
+      - coast_armor_trim_smithing_template
+      - dune_armor_trim_smithing_template
+      - ward_armor_trim_smithing_template
+      - tide_armor_trim_smithing_template
+      - snout_armor_trim_smithing_template
+      - rib_armor_trim_smithing_template
+      - eye_armor_trim_smithing_template
+      - spire_armor_trim_smithing_template
+      - wayfinder_armor_trim_smithing_template
+      - shaper_armor_trim_smithing_template
+      - raiser_armor_trim_smithing_template
+      - host_armor_trim_smithing_template
+      - silence_armor_trim_smithing_template
+      - flow_armor_trim_smithing_template
+      - bolt_armor_trim_smithing_template
+    xp: 15.0
+    menu_item:
+      material: silence_armor_trim_smithing_template
+  smelt_ores:
+    type: smelting
+    items:
+      - iron_ingot
+      - gold_ingot
+      - copper_ingot
+      - netherite_scrap
+      - ancient_debris
+    xp: 4.0
+    menu_item:
+      material: iron_ingot
+  smelt_food:
+    type: smelting
+    items:
+      - cooked_beef
+      - cooked_porkchop
+      - cooked_chicken
+      - cooked_mutton
+      - cooked_rabbit
+      - cooked_cod
+      - cooked_salmon
+      - baked_potato
+      - dried_kelp
+    xp: 2.0
+    menu_item:
+      material: cooked_beef
+  smelt_misc:
+    type: smelting
+    items:
+      - glass
+      - stone
+      - smooth_stone
+      - charcoal
+      - brick
+      - nether_brick
+      - terracotta
+    xp: 1.0
+    menu_item:
+      material: glass
+  craft_diamond_equipment:
+    type: crafting
+    items:
+      - diamond_sword
+      - diamond_pickaxe
+      - diamond_axe
+      - diamond_shovel
+      - diamond_hoe
+      - diamond_helmet
+      - diamond_chestplate
+      - diamond_leggings
+      - diamond_boots
+      - diamond_spear
+    xp: 25.0
+    menu_item:
+      material: diamond_sword
+  craft_iron_equipment:
+    type: crafting
+    items:
+      - iron_sword
+      - iron_pickaxe
+      - iron_axe
+      - iron_shovel
+      - iron_hoe
+      - iron_helmet
+      - iron_chestplate
+      - iron_leggings
+      - iron_boots
+      - iron_spear
+      - shield
+    xp: 10.0
+    menu_item:
+      material: iron_chestplate
+  craft_golden_equipment:
+    type: crafting
+    items:
+      - golden_sword
+      - golden_pickaxe
+      - golden_axe
+      - golden_shovel
+      - golden_hoe
+      - golden_helmet
+      - golden_chestplate
+      - golden_leggings
+      - golden_boots
+      - golden_spear
+    xp: 12.0
+    menu_item:
+      material: golden_helmet
+  craft_stone_equipment:
+    type: crafting
+    items:
+      - stone_sword
+      - stone_pickaxe
+      - stone_axe
+      - stone_shovel
+      - stone_hoe
+      - stone_spear
+    xp: 3.0
+    menu_item:
+      material: stone_pickaxe
+  craft_wooden_equipment:
+    type: crafting
+    items:
+      - wooden_sword
+      - wooden_pickaxe
+      - wooden_axe
+      - wooden_shovel
+      - wooden_hoe
+      - wooden_spear
+      - leather_helmet
+      - leather_chestplate
+      - leather_leggings
+      - leather_boots
+      - bow
+      - crossbow
+      - fishing_rod
+    xp: 2.0
+    menu_item:
+      material: wooden_pickaxe

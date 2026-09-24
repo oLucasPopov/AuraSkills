@@ -56,7 +56,10 @@ public enum ManaAbilityMessage implements MessageKey {
     LIGHTNING_BLADE_END,
     LIGHTNING_BLADE_MENU,
     NOT_READY("not_ready"),
-    NOT_ENOUGH_MANA("not_enough_mana");
+    NOT_ENOUGH_MANA("not_enough_mana"),
+    // === Fork skills: trading, husbandry, smithing ===
+    FORGE_OVERDRIVE_START,
+    FORGE_OVERDRIVE_END;
 
     private final String path;
 

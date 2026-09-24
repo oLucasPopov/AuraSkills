@@ -24,7 +24,11 @@ public enum SourceTypes implements SourceType {
     JUMPING(JumpingSourceParser.class),
     MANA_ABILITY_USE(ManaAbilityUseSourceParser.class),
     POTION_SPLASH(PotionSplashSourceParser.class),
-    STATISTIC(StatisticSourceParser.class);
+    STATISTIC(StatisticSourceParser.class),
+    // === Fork skills: trading, husbandry, smithing ===
+    SMITHING(SmithingSourceParser.class),
+    SMELTING(SmeltingSourceParser.class),
+    CRAFTING(CraftingSourceParser.class);
 
     private final NamespacedId id;
     private final Class<? extends SourceParser<?>> parserClass;

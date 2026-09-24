@@ -80,7 +80,13 @@ public enum Abilities implements Ability {
     FORGER("forging"),
     REPAIRING("forging"),
     ANVIL_MASTER("forging"),
-    SKILL_MENDER("forging");
+    SKILL_MENDER("forging"),
+    // === Fork skills: trading, husbandry, smithing ===
+    EFFICIENT_SMELTING("smithing"),
+    SMITH("smithing"),
+    MASTER_CRAFTED("smithing"),
+    RECYCLER("smithing"),
+    FORGE_MASTERY("smithing");
 
     private final NamespacedId id;
     private final boolean hasSecondaryValue;

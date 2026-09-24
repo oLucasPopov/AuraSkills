@@ -527,4 +527,40 @@ abilities:
     unlock: '{start}+5'
     level_up: 5
     max_level: 0
+  # === Fork skills ===
+  auraskills/efficient_smelting:
+    enabled: true
+    base_value: 2.0
+    value_per_level: 2.0
+    unlock: '{start}+1'
+    level_up: 5
+    max_level: 14
+  auraskills/smith:
+    enabled: true
+    base_value: 10.0
+    value_per_level: 10.0
+    unlock: '{start}+2'
+    level_up: 5
+    max_level: 0
+  auraskills/master_crafted:
+    enabled: true
+    base_value: 5.0
+    value_per_level: 5.0
+    unlock: '{start}+3'
+    level_up: 5
+    max_level: 10
+  auraskills/recycler:
+    enabled: true
+    base_value: 3.0
+    value_per_level: 3.0
+    unlock: '{start}+4'
+    level_up: 5
+    max_level: 7
+  auraskills/forge_mastery:
+    enabled: true
+    base_value: 2.0
+    value_per_level: 2.0
+    unlock: '{start}+5'
+    level_up: 5
+    max_level: 0
 file_version: 3

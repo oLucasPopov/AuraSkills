@@ -17,7 +17,9 @@ public enum ManaAbilities implements ManaAbility {
     TERRAFORM,
     CHARGED_SHOT,
     ABSORPTION,
-    LIGHTNING_BLADE;
+    LIGHTNING_BLADE,
+    // === Fork skills: trading, husbandry, smithing ===
+    FORGE_OVERDRIVE;
 
     @Inject
     private ManaAbilityProvider provider;

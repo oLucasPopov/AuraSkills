@@ -125,4 +125,20 @@ mana_abilities:
     require_sneak: false
     check_offhand: true
     sneak_offhand_bypass: true
+  # === Fork skills ===
+  auraskills/forge_overdrive:
+    enabled: true
+    base_value: 15.0
+    value_per_level: 3.0
+    base_cooldown: 300
+    cooldown_per_level: -5
+    base_mana_cost: 50
+    mana_cost_per_level: 5
+    unlock: 6
+    level_up: 6
+    max_level: 0
+    require_sneak: false
+    check_offhand: true
+    sneak_offhand_bypass: true
+    radius: 10
 file_version: 4

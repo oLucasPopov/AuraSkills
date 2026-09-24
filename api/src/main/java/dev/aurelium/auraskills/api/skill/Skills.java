@@ -29,7 +29,9 @@ public enum Skills implements Skill {
     ENCHANTING(Abilities.ENCHANTER),
     SORCERY(Abilities.SORCERER),
     HEALING(Abilities.HEALER),
-    FORGING(Abilities.FORGER);
+    FORGING(Abilities.FORGER),
+    // === Fork skills: trading, husbandry, smithing ===
+    SMITHING(Abilities.SMITH);
 
     @Inject
     private SkillProvider provider;

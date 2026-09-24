@@ -55,6 +55,10 @@ public class BukkitLevelManager extends LevelManager {
         registerLeveler(new ManaAbilityUseLeveler(plugin));
         registerLeveler(new PotionSplashLeveler(plugin));
         registerLeveler(new StatisticLeveler(plugin));
+        // === Fork skills: trading, husbandry, smithing ===
+        registerLeveler(new SmithingLeveler(plugin));
+        registerLeveler(new SmeltingLeveler(plugin));
+        registerLeveler(new CraftingLeveler(plugin));
     }
 
     private void registerLeveler(SourceLeveler leveler) {

@@ -243,4 +243,19 @@ public class SkillCommands {
 
     }
 
+    // === Fork skills: trading, husbandry, smithing ===
+    @CommandAlias("smithing")
+    public static class SmithingCommand extends SkillCommand {
+
+        public SmithingCommand(AuraSkills plugin) {
+            super(plugin, Skills.SMITHING);
+        }
+
+        @Default
+        public void onCommand(Player player) {
+            openMenu(player);
+        }
+
+    }
+
 }

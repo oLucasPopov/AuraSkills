@@ -291,6 +291,27 @@ abilities:
     name: Skill Mender
     desc: Gaining skill XP has a {value}% chance to repair a held item or worn armor piece with the Mending enchantment by 1 durability per 2 skill XP.
     info: "{value}% Mend Chance"
+  # === Fork skills ===
+  efficient_smelting:
+    name: Efficient Smelting
+    desc: "Grants a {value}% chance to get double results when extracting items from a furnace."
+    info: "+{value}% Double Smelt Chance"
+  smith:
+    name: Smith
+    desc: "Grants +{value}% Smithing {xp_unit}."
+    info: "+{value}% Smithing {xp_unit}"
+  master_crafted:
+    name: Master Crafted
+    desc: "Grants a {value}% chance for equipment you craft to come with Unbreaking already applied."
+    info: "+{value}% Master Crafted Chance"
+  recycler:
+    name: Recycler
+    desc: "Grants a {value}% chance to recover materials consumed in a smithing table."
+    info: "+{value}% Material Recovery Chance"
+  forge_mastery:
+    name: Forge Mastery
+    desc: "Reduces the experience level cost of anvil recipes by {value}% (max 40%)."
+    info: "-{value}% Anvil Cost"
 acf:
   core:
     permission_denied: "<red>I'm sorry, but you do not have permission to perform this command."
@@ -858,6 +879,14 @@ mana_abilities:
     end: "<gray>Lightning Blade has worn off"
   not_ready: "<red>Ability not ready! <gray>({cooldown}s)"
   not_enough_mana: "<yellow>Not enough mana! <gray>({mana} {mana_unit} required)"
+  # === Fork skills ===
+  forge_overdrive:
+    name: Forge Overdrive
+    desc: "For {value} seconds, furnaces within {radius} blocks smelt twice as fast and your manual extracts are doubled. <1>[Right click coal or charcoal to activate]"
+    raise: "<gray>You ignite a piece of coal"
+    lower: "<gray>You extinguish the coal"
+    start: "<gold>Forge Overdrive Activated! <gray>(-{mana} {mana_unit})"
+    end: "<gray>Forge Overdrive has worn off"
 skills:
   farming:
     name: Farming
@@ -904,6 +933,10 @@ skills:
   forging:
     name: Forging
     desc: "Combine and apply books in an anvil to earn Forging {xp_unit}"
+  # === Fork skills ===
+  smithing:
+    name: Smithing
+    desc: "Forge, smelt and craft equipment to earn Smithing {xp_unit}"
 sources:
   fishing:
     cod: Cod
@@ -966,6 +999,20 @@ sources:
     combine_level: Anvil Cost Experience
     grindstone_level: Level of Enchant on Item
     enchant_level: Level of Enchant Received
+  # === Fork skills ===
+  smithing:
+    netherite_upgrade: Netherite Upgrade
+    armor_trim: Apply Armor Trim
+  smelting:
+    smelt_ores: Smelt Ores
+    smelt_food: Cook Food
+    smelt_misc: Smelt Materials
+  crafting:
+    craft_diamond_equipment: Craft Diamond Equipment
+    craft_iron_equipment: Craft Iron Equipment
+    craft_golden_equipment: Craft Golden Equipment
+    craft_stone_equipment: Craft Stone Equipment
+    craft_wooden_equipment: Craft Basic Equipment
 stats:
   strength:
     name: Strength

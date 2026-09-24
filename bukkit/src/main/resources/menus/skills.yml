@@ -115,6 +115,11 @@ templates:
         group: third_row
         order: 6
         material: anvil
+      # === Fork skills ===
+      smithing:
+        group: fourth_row
+        order: 3
+        material: netherite_upgrade_smithing_template
     groups:
       first_row:
         start: 1,0
@@ -127,6 +132,11 @@ templates:
       third_row:
         start: 3,0
         end: 3,8
+        align: center
+      # === Fork skills ===
+      fourth_row:
+        start: 4,0
+        end: 4,8
         align: center
     display_name: '<aqua>{skill} <dark_aqua>{level}'
     lore:
