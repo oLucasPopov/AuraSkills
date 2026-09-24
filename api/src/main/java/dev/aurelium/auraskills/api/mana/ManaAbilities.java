@@ -20,7 +20,8 @@ public enum ManaAbilities implements ManaAbility {
     LIGHTNING_BLADE,
     // === Fork skills: trading, husbandry, smithing ===
     FORGE_OVERDRIVE,
-    ANIMAL_WHISPERER;
+    ANIMAL_WHISPERER,
+    GRAND_BARGAIN;
 
     @Inject
     private ManaAbilityProvider provider;

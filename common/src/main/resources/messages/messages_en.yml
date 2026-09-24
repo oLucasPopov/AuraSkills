@@ -332,6 +332,26 @@ abilities:
     name: Bountiful Pasture
     desc: "Grants a {value}% chance to get extra products when shearing or milking animals."
     info: "+{value}% Extra Product Chance"
+  silver_tongue:
+    name: Silver Tongue
+    desc: "Grants a {value}% chance to get {refund_percentage}% of the emeralds spent on a trade refunded."
+    info: "+{value}% Refund Chance"
+  merchant:
+    name: Merchant
+    desc: "Grants +{value}% Trading {xp_unit}."
+    info: "+{value}% Trading {xp_unit}"
+  charisma:
+    name: Charisma
+    desc: "Grants a {value}% chance for discounted prices when opening a villager's trades."
+    info: "+{value}% Discount Chance"
+  master_negotiator:
+    name: Master Negotiator
+    desc: "Grants a {value}% chance for a trade to not consume its stock (max 50%)."
+    info: "+{value}% Free Trade Chance"
+  guild_reputation:
+    name: Guild Reputation
+    desc: "Grants a {value}% chance to receive a trade's items twice (max 20%)."
+    info: "+{value}% Double Trade Chance"
 acf:
   core:
     permission_denied: "<red>I'm sorry, but you do not have permission to perform this command."
@@ -914,6 +934,13 @@ mana_abilities:
     lower: "<gray>You lower the wheat"
     start: "<gold>Animal Whisperer Activated! <gray>(-{mana} {mana_unit})"
     end: "<gray>Animal Whisperer has worn off"
+  grand_bargain:
+    name: Grand Bargain
+    desc: "For {value} seconds, all trades are {discount_percentage}% cheaper and never run out of stock. <1>[Right click an emerald to activate]"
+    raise: "<gray>You raise an emerald"
+    lower: "<gray>You pocket the emerald"
+    start: "<gold>Grand Bargain Activated! <gray>(-{mana} {mana_unit})"
+    end: "<gray>Grand Bargain has worn off"
 skills:
   farming:
     name: Farming
@@ -967,6 +994,9 @@ skills:
   husbandry:
     name: Husbandry
     desc: "Breed, tame and care for animals to earn Husbandry {xp_unit}"
+  trading:
+    name: Trading
+    desc: "Trade with villagers and barter with piglins to earn Trading {xp_unit}"
 sources:
   fishing:
     cod: Cod
@@ -1056,6 +1086,15 @@ sources:
     shear_mooshroom: Shear a Mooshroom
     shear_snow_golem: Shear a Snow Golem
     milk_animal: Milk an Animal
+  trading:
+    novice_trade: Trade with a Novice Villager
+    apprentice_trade: Trade with an Apprentice Villager
+    journeyman_trade: Trade with a Journeyman Villager
+    expert_trade: Trade with an Expert Villager
+    master_trade: Trade with a Master Villager
+    wandering_trader_trade: Trade with a Wandering Trader
+    piglin_barter: Barter with a Piglin
+    piglin_barter_rare: Rare Piglin Barter
 stats:
   strength:
     name: Strength

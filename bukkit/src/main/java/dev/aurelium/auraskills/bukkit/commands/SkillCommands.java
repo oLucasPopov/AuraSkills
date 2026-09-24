@@ -272,4 +272,18 @@ public class SkillCommands {
 
     }
 
+    @CommandAlias("trading")
+    public static class TradingCommand extends SkillCommand {
+
+        public TradingCommand(AuraSkills plugin) {
+            super(plugin, Skills.TRADING);
+        }
+
+        @Default
+        public void onCommand(Player player) {
+            openMenu(player);
+        }
+
+    }
+
 }

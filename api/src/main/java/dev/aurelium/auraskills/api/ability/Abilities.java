@@ -91,7 +91,12 @@ public enum Abilities implements Ability {
     RANCHER("husbandry"),
     HEALTHY_GROWTH("husbandry"),
     GENTLE_HANDS("husbandry"),
-    BOUNTIFUL_PASTURE("husbandry");
+    BOUNTIFUL_PASTURE("husbandry"),
+    SILVER_TONGUE("trading"),
+    MERCHANT("trading"),
+    CHARISMA("trading"),
+    MASTER_NEGOTIATOR("trading"),
+    GUILD_REPUTATION("trading");
 
     private final NamespacedId id;
     private final boolean hasSecondaryValue;

@@ -170,4 +170,17 @@ skills:
       max_level: 100
       check_cancelled: true
       check_multiplier_permissions: true
+  auraskills/trading:
+    abilities:
+      - auraskills/silver_tongue
+      - auraskills/merchant
+      - auraskills/charisma
+      - auraskills/master_negotiator
+      - auraskills/guild_reputation
+    mana_ability: auraskills/grand_bargain
+    options:
+      enabled: true
+      max_level: 100
+      check_cancelled: true
+      check_multiplier_permissions: true
 file_version: 1

@@ -124,6 +124,10 @@ templates:
         group: fourth_row
         order: 2
         material: wheat
+      trading:
+        group: fourth_row
+        order: 1
+        material: emerald
     groups:
       first_row:
         start: 1,0

@@ -288,6 +288,7 @@ public class CommandRegistrar {
             // === Fork skills: trading, husbandry, smithing ===
             registerSkillCommand(new SkillCommands.SmithingCommand(plugin), map, manager);
             registerSkillCommand(new SkillCommands.HusbandryCommand(plugin), map, manager);
+            registerSkillCommand(new SkillCommands.TradingCommand(plugin), map, manager);
         }
     }
 

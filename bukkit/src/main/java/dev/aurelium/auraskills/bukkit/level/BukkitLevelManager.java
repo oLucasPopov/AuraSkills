@@ -60,6 +60,7 @@ public class BukkitLevelManager extends LevelManager {
         registerLeveler(new SmeltingLeveler(plugin));
         registerLeveler(new CraftingLeveler(plugin));
         registerLeveler(new BreedingLeveler(plugin));
+        registerLeveler(new TradingLeveler(plugin));
     }
 
     private void registerLeveler(SourceLeveler leveler) {

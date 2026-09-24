@@ -65,7 +65,11 @@ public enum ManaAbilityMessage implements MessageKey {
     ANIMAL_WHISPERER_START,
     ANIMAL_WHISPERER_END,
     ANIMAL_WHISPERER_RAISE,
-    ANIMAL_WHISPERER_LOWER;
+    ANIMAL_WHISPERER_LOWER,
+    GRAND_BARGAIN_START,
+    GRAND_BARGAIN_END,
+    GRAND_BARGAIN_RAISE,
+    GRAND_BARGAIN_LOWER;
 
     private final String path;
 

@@ -29,7 +29,8 @@ public enum SourceTypes implements SourceType {
     SMITHING(SmithingSourceParser.class),
     SMELTING(SmeltingSourceParser.class),
     CRAFTING(CraftingSourceParser.class),
-    BREEDING(BreedingSourceParser.class);
+    BREEDING(BreedingSourceParser.class),
+    TRADING(TradingSourceParser.class);
 
     private final NamespacedId id;
     private final Class<? extends SourceParser<?>> parserClass;

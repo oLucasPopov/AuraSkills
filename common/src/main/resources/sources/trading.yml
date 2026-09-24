@@ -1,0 +1,58 @@
+sources:
+  novice_trade:
+    type: trading
+    trigger: villager_trade
+    max_villager_level: 1
+    xp: 10.0
+    menu_item:
+      material: emerald
+  apprentice_trade:
+    type: trading
+    trigger: villager_trade
+    min_villager_level: 2
+    max_villager_level: 2
+    xp: 15.0
+    menu_item:
+      material: emerald
+  journeyman_trade:
+    type: trading
+    trigger: villager_trade
+    min_villager_level: 3
+    max_villager_level: 3
+    xp: 20.0
+    menu_item:
+      material: emerald_block
+  expert_trade:
+    type: trading
+    trigger: villager_trade
+    min_villager_level: 4
+    max_villager_level: 4
+    xp: 25.0
+    menu_item:
+      material: emerald_block
+  master_trade:
+    type: trading
+    trigger: villager_trade
+    min_villager_level: 5
+    xp: 30.0
+    menu_item:
+      material: diamond
+  wandering_trader_trade:
+    type: trading
+    trigger: wandering_trader_trade
+    xp: 15.0
+    menu_item:
+      material: blue_orchid
+  piglin_barter_rare:
+    type: trading
+    trigger: piglin_barter
+    barter_item: netherite_scrap
+    xp: 25.0
+    menu_item:
+      material: netherite_scrap
+  piglin_barter:
+    type: trading
+    trigger: piglin_barter
+    xp: 5.0
+    menu_item:
+      material: gold_ingot
