@@ -120,6 +120,10 @@ templates:
         group: fourth_row
         order: 3
         material: netherite_upgrade_smithing_template
+      husbandry:
+        group: fourth_row
+        order: 2
+        material: wheat
     groups:
       first_row:
         start: 1,0

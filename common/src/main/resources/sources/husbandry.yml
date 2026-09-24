@@ -1,0 +1,108 @@
+sources:
+  breed_common:
+    type: breeding
+    trigger: breed
+    entities:
+      - cow
+      - sheep
+      - pig
+      - chicken
+      - rabbit
+      - goat
+      - frog
+    xp: 8.0
+    menu_item:
+      material: wheat
+  breed_horse:
+    type: breeding
+    trigger: breed
+    entities:
+      - horse
+      - donkey
+      - llama
+    xp: 20.0
+    menu_item:
+      material: golden_carrot
+  breed_mule:
+    type: breeding
+    trigger: breed
+    entity: mule
+    xp: 40.0
+    menu_item:
+      material: saddle
+  breed_rare:
+    type: breeding
+    trigger: breed
+    entities:
+      - axolotl
+      - turtle
+      - sniffer
+      - camel
+      - panda
+      - fox
+      - bee
+    xp: 35.0
+    menu_item:
+      material: lily_pad
+  tame_wolf:
+    type: breeding
+    trigger: tame
+    entity: wolf
+    xp: 25.0
+    menu_item:
+      material: bone
+  tame_cat:
+    type: breeding
+    trigger: tame
+    entity: cat
+    xp: 25.0
+    menu_item:
+      material: raw_cod
+  tame_parrot:
+    type: breeding
+    trigger: tame
+    entity: parrot
+    xp: 30.0
+    menu_item:
+      material: wheat_seeds
+  tame_horse:
+    type: breeding
+    trigger: tame
+    entities:
+      - horse
+      - donkey
+      - llama
+    xp: 20.0
+    menu_item:
+      material: apple
+  shear_sheep:
+    type: breeding
+    trigger: shear
+    entity: sheep
+    xp: 5.0
+    menu_item:
+      material: white_wool
+  shear_mooshroom:
+    type: breeding
+    trigger: shear
+    entity: mooshroom
+    xp: 8.0
+    menu_item:
+      material: red_mushroom
+  shear_snow_golem:
+    type: breeding
+    trigger: shear
+    entity: snow_golem
+    xp: 5.0
+    menu_item:
+      material: carved_pumpkin
+  milk_animal:
+    type: breeding
+    trigger: milk
+    entities:
+      - cow
+      - goat
+      - mooshroom
+    xp: 3.0
+    menu_item:
+      material: milk_bucket

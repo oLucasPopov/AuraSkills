@@ -157,4 +157,17 @@ skills:
       max_level: 100
       check_cancelled: true
       check_multiplier_permissions: true
+  auraskills/husbandry:
+    abilities:
+      - auraskills/twins
+      - auraskills/rancher
+      - auraskills/healthy_growth
+      - auraskills/gentle_hands
+      - auraskills/bountiful_pasture
+    mana_ability: auraskills/animal_whisperer
+    options:
+      enabled: true
+      max_level: 100
+      check_cancelled: true
+      check_multiplier_permissions: true
 file_version: 1

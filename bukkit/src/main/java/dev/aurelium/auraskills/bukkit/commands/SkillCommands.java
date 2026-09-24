@@ -258,4 +258,18 @@ public class SkillCommands {
 
     }
 
+    @CommandAlias("husbandry")
+    public static class HusbandryCommand extends SkillCommand {
+
+        public HusbandryCommand(AuraSkills plugin) {
+            super(plugin, Skills.HUSBANDRY);
+        }
+
+        @Default
+        public void onCommand(Player player) {
+            openMenu(player);
+        }
+
+    }
+
 }

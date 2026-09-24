@@ -86,7 +86,12 @@ public enum Abilities implements Ability {
     SMITH("smithing"),
     MASTER_CRAFTED("smithing"),
     RECYCLER("smithing"),
-    FORGE_MASTERY("smithing");
+    FORGE_MASTERY("smithing"),
+    TWINS("husbandry"),
+    RANCHER("husbandry"),
+    HEALTHY_GROWTH("husbandry"),
+    GENTLE_HANDS("husbandry"),
+    BOUNTIFUL_PASTURE("husbandry");
 
     private final NamespacedId id;
     private final boolean hasSecondaryValue;

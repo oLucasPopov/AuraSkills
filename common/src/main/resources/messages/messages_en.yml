@@ -312,6 +312,26 @@ abilities:
     name: Forge Mastery
     desc: "Reduces the experience level cost of anvil recipes by {value}% (max 40%)."
     info: "-{value}% Anvil Cost"
+  twins:
+    name: Twins
+    desc: "Grants a {value}% chance for a second baby to be born when breeding animals."
+    info: "+{value}% Twin Chance"
+  rancher:
+    name: Rancher
+    desc: "Grants +{value}% Husbandry {xp_unit}."
+    info: "+{value}% Husbandry {xp_unit}"
+  healthy_growth:
+    name: Healthy Growth
+    desc: "Animals bred by you grow {value}% faster (max 40%)."
+    info: "+{value}% Growth Speed"
+  gentle_hands:
+    name: Gentle Hands
+    desc: "Animals tamed by you gain {value} extra max health and a movement speed boost."
+    info: "+{value} Pet Health"
+  bountiful_pasture:
+    name: Bountiful Pasture
+    desc: "Grants a {value}% chance to get extra products when shearing or milking animals."
+    info: "+{value}% Extra Product Chance"
 acf:
   core:
     permission_denied: "<red>I'm sorry, but you do not have permission to perform this command."
@@ -887,6 +907,13 @@ mana_abilities:
     lower: "<gray>You extinguish the coal"
     start: "<gold>Forge Overdrive Activated! <gray>(-{mana} {mana_unit})"
     end: "<gray>Forge Overdrive has worn off"
+  animal_whisperer:
+    name: Animal Whisperer
+    desc: "For {value} seconds, animals within {radius} blocks follow you and babies grow up faster. <1>[Right click wheat to activate]"
+    raise: "<gray>You raise a bundle of wheat"
+    lower: "<gray>You lower the wheat"
+    start: "<gold>Animal Whisperer Activated! <gray>(-{mana} {mana_unit})"
+    end: "<gray>Animal Whisperer has worn off"
 skills:
   farming:
     name: Farming
@@ -937,6 +964,9 @@ skills:
   smithing:
     name: Smithing
     desc: "Forge, smelt and craft equipment to earn Smithing {xp_unit}"
+  husbandry:
+    name: Husbandry
+    desc: "Breed, tame and care for animals to earn Husbandry {xp_unit}"
 sources:
   fishing:
     cod: Cod
@@ -1013,6 +1043,19 @@ sources:
     craft_golden_equipment: Craft Golden Equipment
     craft_stone_equipment: Craft Stone Equipment
     craft_wooden_equipment: Craft Basic Equipment
+  breeding:
+    breed_common: Breed Farm Animals
+    breed_horse: Breed Horses
+    breed_mule: Breed a Mule
+    breed_rare: Breed Rare Animals
+    tame_wolf: Tame a Wolf
+    tame_cat: Tame a Cat
+    tame_parrot: Tame a Parrot
+    tame_horse: Tame a Horse
+    shear_sheep: Shear a Sheep
+    shear_mooshroom: Shear a Mooshroom
+    shear_snow_golem: Shear a Snow Golem
+    milk_animal: Milk an Animal
 stats:
   strength:
     name: Strength

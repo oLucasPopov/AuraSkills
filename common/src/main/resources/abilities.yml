@@ -563,4 +563,40 @@ abilities:
     unlock: '{start}+5'
     level_up: 5
     max_level: 0
+  auraskills/twins:
+    enabled: true
+    base_value: 3.0
+    value_per_level: 3.0
+    unlock: '{start}+1'
+    level_up: 5
+    max_level: 10
+  auraskills/rancher:
+    enabled: true
+    base_value: 10.0
+    value_per_level: 10.0
+    unlock: '{start}+2'
+    level_up: 5
+    max_level: 0
+  auraskills/healthy_growth:
+    enabled: true
+    base_value: 2.0
+    value_per_level: 2.0
+    unlock: '{start}+3'
+    level_up: 5
+    max_level: 0
+  auraskills/gentle_hands:
+    enabled: true
+    base_value: 0.5
+    value_per_level: 0.5
+    unlock: '{start}+4'
+    level_up: 5
+    max_level: 10
+    speed_boost_per_level: 2.0
+  auraskills/bountiful_pasture:
+    enabled: true
+    base_value: 5.0
+    value_per_level: 5.0
+    unlock: '{start}+5'
+    level_up: 5
+    max_level: 0
 file_version: 3
