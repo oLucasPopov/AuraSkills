@@ -102,6 +102,10 @@ public class TradingAbilities extends BukkitAbilityImpl {
             }
             restored.add(copy);
         }
+        // Keep trades unlocked mid-session (e.g. villager level-up while the GUI was open)
+        for (int i = baseline.size(); i < merchant.getRecipeCount(); i++) {
+            restored.add(merchant.getRecipe(i));
+        }
         merchant.setRecipes(restored);
     }
 
