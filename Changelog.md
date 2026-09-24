@@ -9,7 +9,7 @@ Changelog for versions since 2.0.0.
 - Trading mana ability: Grand Bargain (right click an emerald)
 - Husbandry mana ability: Animal Whisperer (right click wheat)
 - Smithing mana ability: Forge Overdrive (right click coal/charcoal)
-- Note for existing servers: to see the 3 new skills in the `/skills` menu, delete `plugins/AuraSkills/menus/skills.yml` (it regenerates) or manually add the `trading`/`husbandry`/`smithing` contexts from the default file
+- Existing servers are upgraded automatically: missing menu template contexts/groups (including the 3 new skills in `/skills`) are merged into user menu files on startup without overwriting customizations
 
 ## 2.4.0
 

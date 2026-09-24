@@ -86,6 +86,13 @@ public class MenuFileManager {
         // Files that don't have updating enabled yet, since they haven't had changes
         if (embedded.node("file_version").virtual()) return;
 
+        // === Fork skills: trading, husbandry, smithing ===
+        // The MenuFileUpdates mechanism only merges whole missing named sections, so template
+        // contexts/groups added inside an existing template never reach existing servers.
+        // Merge them here (missing keys only, user customizations are never overwritten).
+        mergeMissingTemplateKeys(embedded, user, userFile);
+        // === End fork skills ===
+
         int embVersion = embedded.node("file_version").getInt();
         int userVersion = user.node("file_version").getInt(0);
 
@@ -160,5 +167,40 @@ public class MenuFileManager {
         }
         return changed;
     }
+
+    // === Fork skills: trading, husbandry, smithing ===
+    private void mergeMissingTemplateKeys(ConfigurationNode embedded, ConfigurationNode user, File userFile) throws SerializationException {
+        int changed = 0;
+        for (ConfigurationNode template : embedded.node("templates").childrenMap().values()) {
+            Object templateKey = template.key();
+            if (templateKey == null) continue;
+            changed += mergeMissingChildren(template.node("contexts"), user.node("templates", templateKey, "contexts"));
+            changed += mergeMissingChildren(template.node("groups"), user.node("templates", templateKey, "groups"));
+        }
+        if (changed > 0) {
+            try {
+                FileUtil.saveYamlFile(userFile, user);
+                plugin.logger().info("Menu file " + userFile.getName() + " was updated: " + changed + " new template context(s)/group(s) added");
+            } catch (IOException e) {
+                plugin.logger().warn("Error saving menu file " + userFile.getName());
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private int mergeMissingChildren(ConfigurationNode embeddedSection, ConfigurationNode userSection) throws SerializationException {
+        if (embeddedSection.virtual()) return 0;
+        int changed = 0;
+        for (ConfigurationNode child : embeddedSection.childrenMap().values()) {
+            Object key = child.key();
+            if (key == null) continue;
+            if (userSection.node(key).virtual()) {
+                userSection.node(key).set(child);
+                changed++;
+            }
+        }
+        return changed;
+    }
+    // === End fork skills ===
 
 }
