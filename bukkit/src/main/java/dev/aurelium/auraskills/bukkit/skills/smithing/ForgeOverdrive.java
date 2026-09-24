@@ -7,6 +7,7 @@ import dev.aurelium.auraskills.common.message.type.ManaAbilityMessage;
 import dev.aurelium.auraskills.common.scheduler.Task;
 import dev.aurelium.auraskills.common.scheduler.TaskRunnable;
 import dev.aurelium.auraskills.common.user.User;
+import dev.aurelium.auraskills.common.util.text.TextUtil;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
@@ -15,6 +16,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
 
 import java.util.Map;
 import java.util.UUID;
@@ -46,6 +48,8 @@ public class ForgeOverdrive extends ReadiedManaAbility {
     @EventHandler
     public void activationListener(PlayerInteractEvent event) {
         if (isDisabled()) return;
+        if (event.isCancelled()) return;
+        if (event.getHand() != EquipmentSlot.HAND) return;
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK) return;
 
         Block block = event.getClickedBlock();
@@ -55,7 +59,13 @@ public class ForgeOverdrive extends ReadiedManaAbility {
 
         Player player = event.getPlayer();
         if (failsChecks(player)) return;
+        if (!isHoldingMaterial(player)) return;
         checkActivation(player);
+    }
+
+    @Override
+    public String replaceDescPlaceholders(String input, User user) {
+        return TextUtil.replace(input, "{radius}", String.valueOf(manaAbility.optionInt("radius", 10)));
     }
 
     @Override

@@ -20,7 +20,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.entity.EntityBreedEvent;
 import org.bukkit.event.entity.EntityTameEvent;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerShearEntityEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Map;
@@ -141,5 +143,30 @@ public class HusbandryAbilities extends BukkitAbilityImpl {
         String color = sheep.getColor() != null ? sheep.getColor().name() : "WHITE";
         Material wool = Material.matchMaterial(color + "_WOOL");
         return wool != null ? wool : Material.WHITE_WOOL;
+    }
+
+    @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
+    public void bountifulPastureMilking(PlayerInteractEntityEvent event) {
+        var ability = Abilities.BOUNTIFUL_PASTURE;
+        if (isDisabled(ability)) return;
+        if (event.getHand() != EquipmentSlot.HAND) return;
+        if (!(event.getRightClicked() instanceof Animals animals) || !animals.isAdult()) return;
+        EntityType type = animals.getType();
+        if (type != EntityType.COW && type != EntityType.GOAT && type != EntityType.MOOSHROOM) return;
+
+        Player player = event.getPlayer();
+        Material held = player.getInventory().getItemInMainHand().getType();
+        boolean bowl = type == EntityType.MOOSHROOM && held == Material.BOWL;
+        if (held != Material.BUCKET && !bowl) return;
+
+        User user = plugin.getUser(player);
+        if (failsChecks(player, ability)) return;
+        if (user.getAbilityLevel(ability) <= 0) return;
+        if (rand.nextDouble() >= getValue(ability, user) / 100) return;
+
+        // Vanilla milking replaces the held bucket/bowl, so one interact can only roll once
+        ItemStack extra = new ItemStack(bowl ? Material.MUSHROOM_STEW : Material.MILK_BUCKET, 1);
+        player.getInventory().addItem(extra).values()
+                .forEach(leftover -> player.getWorld().dropItemNaturally(player.getLocation(), leftover));
     }
 }

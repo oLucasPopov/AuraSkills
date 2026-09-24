@@ -1,11 +1,14 @@
 package dev.aurelium.auraskills.bukkit.skills.trading;
 
 import dev.aurelium.auraskills.api.ability.Abilities;
+import dev.aurelium.auraskills.api.ability.Ability;
 import dev.aurelium.auraskills.api.mana.ManaAbilities;
+import dev.aurelium.auraskills.api.util.NumberUtil;
 import dev.aurelium.auraskills.bukkit.AuraSkills;
 import dev.aurelium.auraskills.bukkit.ability.BukkitAbilityImpl;
 import dev.aurelium.auraskills.bukkit.util.ItemUtils;
 import dev.aurelium.auraskills.common.user.User;
+import dev.aurelium.auraskills.common.util.text.TextUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -35,6 +38,8 @@ public class TradingAbilities extends BukkitAbilityImpl {
 
     // merchant entity id -> original (undiscounted) recipes, snapshotted on first open of a session
     private final Map<UUID, List<MerchantRecipe>> originalRecipes = new ConcurrentHashMap<>();
+    // merchant entity id -> rolled Charisma discount, rolled once per merchant per session
+    private final Map<UUID, Double> rolledDiscounts = new ConcurrentHashMap<>();
 
     public TradingAbilities(AuraSkills plugin) {
         super(plugin, Abilities.SILVER_TONGUE, Abilities.MERCHANT, Abilities.CHARISMA, Abilities.MASTER_NEGOTIATOR, Abilities.GUILD_REPUTATION);
@@ -48,16 +53,8 @@ public class TradingAbilities extends BukkitAbilityImpl {
         if (!(inventory.getMerchant() instanceof Entity entity)) return;
 
         User user = plugin.getUser(player);
-        double discount = 0;
-
-        var charisma = Abilities.CHARISMA;
-        if (!isDisabled(charisma) && !failsChecks(player, charisma) && user.getAbilityLevel(charisma) > 0) {
-            if (rand.nextDouble() < getValue(charisma, user) / 100) {
-                double min = charisma.optionDouble("min_discount", 5.0);
-                double max = charisma.optionDouble("max_discount", 15.0);
-                discount += min + rand.nextDouble() * (max - min);
-            }
-        }
+        // Charisma is rolled once per merchant per session so reopen-spamming cannot farm rerolls
+        double discount = rolledDiscounts.computeIfAbsent(entity.getUniqueId(), k -> rollCharismaDiscount(player, user));
 
         if (isGrandBargainActive(player)) {
             discount += ManaAbilities.GRAND_BARGAIN.optionDouble("discount_percentage", 20.0);
@@ -88,6 +85,7 @@ public class TradingAbilities extends BukkitAbilityImpl {
         if (!(event.getInventory() instanceof MerchantInventory inventory)) return;
         if (!(inventory.getMerchant() instanceof Entity entity)) return;
 
+        rolledDiscounts.remove(entity.getUniqueId());
         List<MerchantRecipe> baseline = originalRecipes.remove(entity.getUniqueId());
         if (baseline == null) return;
 
@@ -181,6 +179,25 @@ public class TradingAbilities extends BukkitAbilityImpl {
 
     private boolean isGrandBargainActive(Player player) {
         return plugin.getUser(player).getManaAbilityData(ManaAbilities.GRAND_BARGAIN).isActivated();
+    }
+
+    private double rollCharismaDiscount(Player player, User user) {
+        var charisma = Abilities.CHARISMA;
+        if (isDisabled(charisma) || failsChecks(player, charisma)) return 0.0;
+        if (user.getAbilityLevel(charisma) <= 0) return 0.0;
+        if (rand.nextDouble() >= getValue(charisma, user) / 100) return 0.0;
+        double min = charisma.optionDouble("min_discount", 5.0);
+        double max = charisma.optionDouble("max_discount", 15.0);
+        return min + rand.nextDouble() * (max - min);
+    }
+
+    @Override
+    public String replaceDescPlaceholders(String input, Ability ability, User user) {
+        if (ability.equals(Abilities.SILVER_TONGUE)) {
+            return TextUtil.replace(input, "{refund_percentage}",
+                    NumberUtil.format1(Abilities.SILVER_TONGUE.optionDouble("refund_percentage", 10.0)));
+        }
+        return input;
     }
 
     private static List<MerchantRecipe> deepCopyRecipes(List<MerchantRecipe> recipes) {

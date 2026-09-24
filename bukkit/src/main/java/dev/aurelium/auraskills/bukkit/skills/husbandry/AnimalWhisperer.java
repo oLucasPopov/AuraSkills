@@ -7,6 +7,7 @@ import dev.aurelium.auraskills.common.message.type.ManaAbilityMessage;
 import dev.aurelium.auraskills.common.scheduler.Task;
 import dev.aurelium.auraskills.common.scheduler.TaskRunnable;
 import dev.aurelium.auraskills.common.user.User;
+import dev.aurelium.auraskills.common.util.text.TextUtil;
 import org.bukkit.Sound;
 import org.bukkit.entity.Animals;
 import org.bukkit.entity.Entity;
@@ -66,6 +67,11 @@ public class AnimalWhisperer extends ReadiedManaAbility {
             task.cancel();
         }
         grownBabies.remove(player.getUniqueId());
+    }
+
+    @Override
+    public String replaceDescPlaceholders(String input, User user) {
+        return TextUtil.replace(input, "{radius}", String.valueOf(manaAbility.optionInt("radius", 15)));
     }
 
     private void whisper(Player player, int radius) {
