@@ -11,7 +11,10 @@ import org.bukkit.Sound;
 import org.bukkit.entity.Animals;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.util.Vector;
 
 import java.util.Map;
@@ -44,6 +47,18 @@ public class AnimalWhisperer extends ReadiedManaAbility {
         tasks.put(player.getUniqueId(), task);
     }
 
+    @EventHandler
+    public void activationListener(PlayerInteractEntityEvent event) {
+        if (isDisabled()) return;
+        if (event.isCancelled()) return;
+        if (event.getHand() != EquipmentSlot.HAND) return;
+        if (!(event.getRightClicked() instanceof Animals)) return;
+
+        Player player = event.getPlayer();
+        if (failsChecks(player)) return;
+        checkActivation(player);
+    }
+
     @Override
     public void onStop(Player player, User user) {
         Task task = tasks.remove(player.getUniqueId());
@@ -58,7 +73,8 @@ public class AnimalWhisperer extends ReadiedManaAbility {
             onStop(player, plugin.getUser(player));
             return;
         }
-        Set<UUID> grown = grownBabies.getOrDefault(player.getUniqueId(), Set.of());
+        Set<UUID> grown = grownBabies.get(player.getUniqueId());
+        if (grown == null) return;
         for (Entity entity : player.getNearbyEntities(radius, radius, radius)) {
             if (!(entity instanceof Animals animals)) continue;
             if (!animals.isAdult()) {

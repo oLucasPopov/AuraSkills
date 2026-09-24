@@ -7,11 +7,14 @@ import dev.aurelium.auraskills.common.message.type.ManaAbilityMessage;
 import dev.aurelium.auraskills.common.scheduler.Task;
 import dev.aurelium.auraskills.common.scheduler.TaskRunnable;
 import dev.aurelium.auraskills.common.user.User;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.Furnace;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEvent;
 
 import java.util.Map;
 import java.util.UUID;
@@ -40,6 +43,21 @@ public class ForgeOverdrive extends ReadiedManaAbility {
         tasks.put(player.getUniqueId(), task);
     }
 
+    @EventHandler
+    public void activationListener(PlayerInteractEvent event) {
+        if (isDisabled()) return;
+        if (event.getAction() != Action.RIGHT_CLICK_BLOCK) return;
+
+        Block block = event.getClickedBlock();
+        if (block == null) return;
+        Material type = block.getType();
+        if (type != Material.FURNACE && type != Material.BLAST_FURNACE && type != Material.SMOKER) return;
+
+        Player player = event.getPlayer();
+        if (failsChecks(player)) return;
+        checkActivation(player);
+    }
+
     @Override
     public void onStop(Player player, User user) {
         Task task = tasks.remove(player.getUniqueId());
@@ -57,11 +75,12 @@ public class ForgeOverdrive extends ReadiedManaAbility {
         int py = player.getLocation().getBlockY();
         int pz = player.getLocation().getBlockZ();
         for (int x = px - radius; x <= px + radius; x++) {
-            for (int y = Math.max(player.getWorld().getMinHeight(), py - radius); y <= Math.min(player.getWorld().getMaxHeight(), py + radius); y++) {
+            for (int y = Math.max(player.getWorld().getMinHeight(), py - radius); y <= Math.min(player.getWorld().getMaxHeight() - 1, py + radius); y++) {
                 for (int z = pz - radius; z <= pz + radius; z++) {
                     Block block = player.getWorld().getBlockAt(x, y, z);
                     if (!(block.getState() instanceof Furnace furnace)) continue;
                     if (furnace.getBurnTime() <= 0) continue;
+                    if (furnace.getCookTimeTotal() <= 0) continue;
                     // +1 cook progress per 2 ticks on top of vanilla = ~1.5-2x effective speed
                     furnace.setCookTime((short) Math.min(furnace.getCookTimeTotal() - 1, furnace.getCookTime() + 1));
                     furnace.update();
