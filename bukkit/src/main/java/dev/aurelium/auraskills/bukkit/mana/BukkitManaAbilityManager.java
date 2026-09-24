@@ -11,6 +11,7 @@ import dev.aurelium.auraskills.bukkit.skills.fighting.LightningBlade;
 import dev.aurelium.auraskills.bukkit.skills.fishing.SharpHook;
 import dev.aurelium.auraskills.bukkit.skills.foraging.Treecapitator;
 import dev.aurelium.auraskills.bukkit.skills.mining.SpeedMine;
+import dev.aurelium.auraskills.bukkit.skills.smithing.ForgeOverdrive;
 import dev.aurelium.auraskills.bukkit.user.BukkitUser;
 import dev.aurelium.auraskills.common.mana.ManaAbilityManager;
 import dev.aurelium.auraskills.common.message.type.ManaAbilityMessage;
@@ -46,6 +47,8 @@ public class BukkitManaAbilityManager extends ManaAbilityManager {
         registerProvider(new ChargedShot(plugin));
         registerProvider(new Absorption(plugin));
         registerProvider(new LightningBlade(plugin));
+        // === Fork skills: trading, husbandry, smithing ===
+        registerProvider(new ForgeOverdrive(plugin));
     }
 
     private void registerProvider(ManaAbilityProvider provider) {

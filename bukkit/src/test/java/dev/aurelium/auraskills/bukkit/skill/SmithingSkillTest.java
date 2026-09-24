@@ -6,7 +6,9 @@ import dev.aurelium.auraskills.api.source.type.CraftingXpSource;
 import dev.aurelium.auraskills.api.source.type.SmeltingXpSource;
 import dev.aurelium.auraskills.api.source.type.SmithingXpSource;
 import dev.aurelium.auraskills.bukkit.AuraSkills;
+import dev.aurelium.auraskills.bukkit.skills.smithing.SmithingAbilities;
 import dev.aurelium.auraskills.common.util.TestSession;
+import org.bukkit.Material;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -48,5 +50,17 @@ public class SmithingSkillTest {
         assertFalse(crafting.isEmpty());
         // Every loaded source must grant XP
         assertTrue(crafting.stream().allMatch(s -> s.source().getXp() > 0));
+    }
+
+    @Test
+    void testIsEquipment() {
+        assertTrue(SmithingAbilities.isEquipment(Material.DIAMOND_SWORD));
+        assertTrue(SmithingAbilities.isEquipment(Material.IRON_CHESTPLATE));
+        assertTrue(SmithingAbilities.isEquipment(Material.NETHERITE_PICKAXE));
+        assertTrue(SmithingAbilities.isEquipment(Material.SHIELD));
+        assertTrue(SmithingAbilities.isEquipment(Material.TRIDENT));
+        assertFalse(SmithingAbilities.isEquipment(Material.STICK));
+        assertFalse(SmithingAbilities.isEquipment(Material.DIAMOND));
+        assertFalse(SmithingAbilities.isEquipment(Material.FURNACE));
     }
 }

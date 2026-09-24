@@ -59,7 +59,9 @@ public enum ManaAbilityMessage implements MessageKey {
     NOT_ENOUGH_MANA("not_enough_mana"),
     // === Fork skills: trading, husbandry, smithing ===
     FORGE_OVERDRIVE_START,
-    FORGE_OVERDRIVE_END;
+    FORGE_OVERDRIVE_END,
+    FORGE_OVERDRIVE_RAISE,
+    FORGE_OVERDRIVE_LOWER;
 
     private final String path;
 
