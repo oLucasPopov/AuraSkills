@@ -2,6 +2,15 @@
 
 Changelog for versions since 2.0.0.
 
+## Fork - New Skills (unreleased)
+
+- Added 3 new skills: **Trading**, **Husbandry** and **Smithing**, each with 5 abilities, 1 mana ability, own XP sources, stat rewards, menu icons and `/<skill>` commands
+- New XP source types: `trading`, `breeding`, `smithing`, `smelting`, `crafting`
+- Trading mana ability: Grand Bargain (right click an emerald)
+- Husbandry mana ability: Animal Whisperer (right click wheat)
+- Smithing mana ability: Forge Overdrive (right click coal/charcoal)
+- Note for existing servers: to see the 3 new skills in the `/skills` menu, delete `plugins/AuraSkills/menus/skills.yml` (it regenerates) or manually add the `trading`/`husbandry`/`smithing` contexts from the default file
+
 ## 2.4.0
 
 ### New Features

@@ -171,4 +171,5 @@ mana_abilities:
     check_offhand: true
     sneak_offhand_bypass: true
     discount_percentage: 20.0
-file_version: 4
+# === Fork skills ===
+file_version: 5

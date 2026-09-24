@@ -1,7 +1,7 @@
 # Design: Novas skills Trading, Husbandry e Smithing
 
 **Data:** 2026-09-24
-**Status:** Aguardando revisão do usuário
+**Status:** Implementado (branch feature/fork-skills)
 **Repositório de trabalho:** fork `origin` = `https://github.com/oLucasPopov/AuraSkills.git`; upstream `upstream` = `https://github.com/Archy-X/AuraSkills.git`
 
 ## 1. Visão geral
