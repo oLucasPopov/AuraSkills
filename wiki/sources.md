@@ -101,6 +101,16 @@ The block source (`type: block`) gives XP for breaking or interacting with block
 * `max_blocks` - The maximum number of blocks Treecapitator can break for this trunk type.
 * `allow_bone_meal` - If false, crops that have been fertilized with bone meal will not give skill XP (true by default). Only applies to block sources with `interact` trigger like sweet_berry_bush.
 
+### Breeding
+
+The breeding source (`type: breeding`) gives XP for animal husbandry actions: breeding, taming, shearing and milking. Repeating the same action on the same animal is limited by built-in cooldowns (5 minutes per parent pair for breeding, 1 minute per animal for milking).
+
+#### Options
+
+* `trigger` - The action that gives XP. One of `breed`, `tame`, `shear`, `milk`. (Required)
+* `entity` - A specific entity type required for the source, as a Bukkit EntityType in all lowercase (e.g. `cow`).
+* `entities` - A list of multiple valid entity types. If neither `entity` nor `entities` is defined, any entity that fires the trigger works.
+
 ### Brewing
 
 The brewing source (`type: brewing`) gives XP when brewing potions in a brewing stand.&#x20;
@@ -109,6 +119,15 @@ The brewing source (`type: brewing`) gives XP when brewing potions in a brewing 
 
 * `ingredient` - An item filter defining valid potion ingredients
 * `trigger` - When to give XP, either on `brew` or `takeout`. Using `brew` means that auto-brewers will still give XP to the player who placed the brewing stand.
+
+### Crafting
+
+The crafting source (`type: crafting`) gives XP when crafting items in a crafting table or the player inventory grid. The XP given is the `xp` key multiplied by the amount of result items crafted (shift-clicking counts the full batch).
+
+#### Options
+
+* `item` - The result item that gives XP when crafted, as a material name in all lowercase (e.g. `iron_sword`). (Required)
+* `items` - A list of multiple valid result items.
 
 ### Damage
 
@@ -203,6 +222,30 @@ The potion splash source (`type: potion_splash`) gives XP when a player uses a s
 
 * `item` - An item filter defining the type of potion splashed. (Required)
 
+### Smelting
+
+The smelting source (`type: smelting`) gives XP when a player manually extracts the result from a furnace, blast furnace or smoker. The XP given is the `xp` key multiplied by the amount of items extracted. Items collected automatically by hoppers give no XP.
+
+#### Options
+
+* `item` - The result item that gives XP when extracted, as a material name in all lowercase (e.g. `iron_ingot`). (Required)
+* `items` - A list of multiple valid result items.
+
+### Smithing
+
+The smithing source (`type: smithing`) gives XP when using a smithing table, both for netherite upgrades and armor trims. If multiple filter options are defined, all of them must match the recipe. If none are defined, any smithing recipe works.
+
+#### Options
+
+* `result` - The result item of the smithing recipe, as a material name in all lowercase.
+* `results` - A list of multiple valid result items.
+* `template` - The smithing template required (e.g. `netherite_upgrade_smithing_template` or an armor trim template).
+* `templates` - A list of multiple valid templates.
+* `base` - The base equipment item consumed by the recipe.
+* `bases` - A list of multiple valid base items.
+* `addition` - The addition item consumed by the recipe (e.g. `netherite_ingot`).
+* `additions` - A list of multiple valid addition items.
+
 ### Statistic
 
 The statistic source (`type: statistic`) gives XP when a Minecraft player statistic increases. XP is given at a fixed interval controlled by the `xp_gain_period` option under Endurance in `skills.yml`. The default period is every 5 minutes. For the source to work, `stats.disable-saving` in the server's `spigot.yml` must be false (it's false by default, so only check if you changed it).
@@ -212,6 +255,18 @@ The statistic source (`type: statistic`) gives XP when a Minecraft player statis
 * `statistic` - The name of the statistic to track increases and give XP for. Must be a valid Bukkit [Statistic](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Statistic.html) in all lowercase. (Required)
 * `multiplier` - An flat amount to multiply the XP gained by. (Defaults to 1)
 * `minimum_increase` - The minimum amount the statistic has to increase by within the check period in order for XP to be given. If the amount gained is less than the minimum, it will still be added towards the next time the amount is checked. (Defaults to 1)
+
+### Trading
+
+The trading source (`type: trading`) gives XP when trading with villagers or wandering traders, or when bartering with piglins. XP is a flat amount per trade or barter; repeating the same trade with the same merchant applies a decay that progressively reduces the XP gained.
+
+#### Options
+
+* `trigger` - The trade action that gives XP. One of `villager_trade`, `wandering_trader_trade`, `piglin_barter`. (Defaults to `villager_trade`)
+* `villager_profession` - The villager profession required for `villager_trade` sources (e.g. `librarian`), in all lowercase. If not defined, any profession works.
+* `min_villager_level` - The minimum villager level required, from 1 (novice) to 5 (master). (Defaults to 1)
+* `max_villager_level` - The maximum villager level allowed. (Defaults to 5)
+* `barter_item` - For `piglin_barter` sources, the barter outcome item required (e.g. `ender_pearl`), in all lowercase. If not defined, any barter outcome works.
 
 ## Item filter
 
