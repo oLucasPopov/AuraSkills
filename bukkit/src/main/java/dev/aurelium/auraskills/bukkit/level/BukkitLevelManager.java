@@ -61,6 +61,8 @@ public class BukkitLevelManager extends LevelManager {
         registerLeveler(new CraftingLeveler(plugin));
         registerLeveler(new BreedingLeveler(plugin));
         registerLeveler(new TradingLeveler(plugin));
+        // === Fork skills: building, culinary, engineering ===
+        registerLeveler(new BuildingLeveler(plugin));
     }
 
     private void registerLeveler(SourceLeveler leveler) {

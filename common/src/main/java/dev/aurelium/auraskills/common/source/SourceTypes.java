@@ -30,7 +30,9 @@ public enum SourceTypes implements SourceType {
     SMELTING(SmeltingSourceParser.class),
     CRAFTING(CraftingSourceParser.class),
     BREEDING(BreedingSourceParser.class),
-    TRADING(TradingSourceParser.class);
+    TRADING(TradingSourceParser.class),
+    // === Fork skills: building, culinary, engineering ===
+    BUILDING(BuildingSourceParser.class);
 
     private final NamespacedId id;
     private final Class<? extends SourceParser<?>> parserClass;
