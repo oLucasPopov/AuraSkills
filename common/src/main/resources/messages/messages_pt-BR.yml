@@ -833,7 +833,7 @@ mana_abilities:
   # === Fork skills ===
   forge_overdrive:
     name: Sobrecarga da Forja
-    desc: "Por {value} segundos, fornalhas num raio de {radius} blocos fundem duas vezes mais rápido e suas retiradas manuais são dobradas. <1>[Clique com carvão para ativar]"
+    desc: "Por {value} segundos, fornalhas num raio de {radius} blocos fundem duas vezes mais rápido e suas retiradas manuais são dobradas. <1>[Clique com carvão ou carvão vegetal para ativar]"
     raise: "<gray>Você acende um pedaço de carvão"
     lower: "<gray>Você apaga o carvão"
     start: "<gold>Sobrecarga da Forja Ativada! <gray>(-{mana} {mana_unit})"

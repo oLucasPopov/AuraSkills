@@ -177,14 +177,53 @@ public class MenuFileManager {
             changed += mergeMissingChildren(template.node("contexts"), user.node("templates", templateKey, "contexts"));
             changed += mergeMissingChildren(template.node("groups"), user.node("templates", templateKey, "groups"));
         }
-        if (changed > 0) {
+        // Merged groups may reference rows beyond the user's menu size (e.g. fifth_row in a size 5 menu)
+        boolean sizeChanged = ensureSizeFitsGroups(user);
+        if (changed > 0 || sizeChanged) {
             try {
                 FileUtil.saveYamlFile(userFile, user);
-                plugin.logger().info("Menu file " + userFile.getName() + " was updated: " + changed + " new template context(s)/group(s) added");
+                String message = "Menu file " + userFile.getName() + " was updated:";
+                if (changed > 0) {
+                    message += " " + changed + " new template context(s)/group(s) added";
+                }
+                if (sizeChanged) {
+                    message += (changed > 0 ? "," : "") + " size increased to fit merged groups";
+                }
+                plugin.logger().info(message);
             } catch (IOException e) {
                 plugin.logger().warn("Error saving menu file " + userFile.getName());
                 e.printStackTrace();
             }
+        }
+    }
+
+    private boolean ensureSizeFitsGroups(ConfigurationNode user) throws SerializationException {
+        ConfigurationNode sizeNode = user.node("size");
+        if (sizeNode.virtual()) return false;
+        int size = sizeNode.getInt(-1);
+        if (size < 0) return false;
+        int maxRow = -1;
+        for (ConfigurationNode template : user.node("templates").childrenMap().values()) {
+            for (ConfigurationNode group : template.node("groups").childrenMap().values()) {
+                maxRow = Math.max(maxRow, parseRow(group.node("start").getString()));
+                maxRow = Math.max(maxRow, parseRow(group.node("end").getString()));
+            }
+        }
+        if (maxRow >= 0 && size < maxRow + 1) {
+            sizeNode.set(maxRow + 1);
+            return true;
+        }
+        return false;
+    }
+
+    private int parseRow(String pos) {
+        if (pos == null) return -1;
+        int comma = pos.indexOf(',');
+        String row = (comma >= 0 ? pos.substring(0, comma) : pos).trim();
+        try {
+            return Integer.parseInt(row);
+        } catch (NumberFormatException e) {
+            return -1;
         }
     }
 
