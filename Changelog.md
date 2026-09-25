@@ -2,6 +2,17 @@
 
 Changelog for versions since 2.0.0.
 
+## Fork - More Skills (unreleased)
+
+- Added 3 new skills: **Building**, **Culinary** and **Engineering**, each with 5 abilities, 1 mana ability, own XP sources, stat rewards, menu icons and `/<skill>` commands
+- New XP source type: `building` (XP for placing blocks, with anti place/break decay)
+- New crafting/smelting coverage: `crafting` and `smelting` sources now cover food (Culinary) and mechanical components (Engineering); cooking on campfires is supported
+- Smithing `smelt_food` sources were migrated to Culinary (`sources/smithing.yml` is auto-updated to `file_version: 3` on startup)
+- Building mana ability: Blueprint (right click bricks)
+- Culinary mana ability: Banquet (right click a bowl)
+- Engineering mana ability: Power Surge (right click redstone dust, then click a crafting table)
+- pt-BR translations backfilled for the round-1 fork abilities and mana abilities (Trading, Husbandry, Smithing)
+
 ## Fork - New Skills (unreleased)
 
 - Added 3 new skills: **Trading**, **Husbandry** and **Smithing**, each with 5 abilities, 1 mana ability, own XP sources, stat rewards, menu icons and `/<skill>` commands

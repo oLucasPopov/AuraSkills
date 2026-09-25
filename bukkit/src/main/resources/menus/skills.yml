@@ -1,5 +1,5 @@
 title: '{{skills_title}}'
-size: 5
+size: 6
 fill:
   enabled: true
   material: black_stained_glass_pane
@@ -128,6 +128,18 @@ templates:
         group: fourth_row
         order: 1
         material: emerald
+      building:
+        group: fourth_row
+        order: 4
+        material: bricks
+      culinary:
+        group: fifth_row
+        order: 1
+        material: cooked_beef
+      engineering:
+        group: fifth_row
+        order: 2
+        material: piston
     groups:
       first_row:
         start: 1,0
@@ -145,6 +157,10 @@ templates:
       fourth_row:
         start: 4,0
         end: 4,8
+        align: center
+      fifth_row:
+        start: 5,0
+        end: 5,8
         align: center
     display_name: '<aqua>{skill} <dark_aqua>{level}'
     lore:

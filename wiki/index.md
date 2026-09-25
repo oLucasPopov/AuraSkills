@@ -17,9 +17,9 @@ Players level up [skills](skills/) by gaining skill XP through general Minecraft
 
 > Main article: [Skills](skills/)
 
-There are 14 default skills included in AuraSkills which level up as players gain skill XP through various XP sources. By default, each skill has two [stats](stats/) that increase every 1 or 2 skill levels. Most skills also have 5 passive [abilities](abilities.md) that unlock the at first five levels and level up every 5 skill levels. Some skills have a [mana ability](mana-abilities.md), which is a special ability that must be activated by the player, costs mana, and has a cooldown.
+There are 17 default skills included in AuraSkills which level up as players gain skill XP through various XP sources. By default, each skill has two [stats](stats/) that increase every 1 or 2 skill levels. Most skills also have 5 passive [abilities](abilities.md) that unlock the at first five levels and level up every 5 skill levels. Some skills have a [mana ability](mana-abilities.md), which is a special ability that must be activated by the player, costs mana, and has a cooldown.
 
-The 14 skills are Farming, Foraging, Mining, Fishing, Excavation, Archery, Defense, Fighting, Agility, Enchanting, Alchemy, Smithing, Husbandry, and Trading. The existing 15 skills from Beta can be added back by loading the legacy preset.
+The 17 skills are Farming, Foraging, Mining, Fishing, Excavation, Archery, Defense, Fighting, Agility, Enchanting, Alchemy, Smithing, Husbandry, Trading, Building, Culinary, and Engineering. The existing 15 skills from Beta can be added back by loading the legacy preset.
 
 Skills can be viewed using `/skills` or by using the command for an individual skill, such as `/farming`, `/mining`, etc.
 

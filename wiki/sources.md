@@ -101,6 +101,15 @@ The block source (`type: block`) gives XP for breaking or interacting with block
 * `max_blocks` - The maximum number of blocks Treecapitator can break for this trunk type.
 * `allow_bone_meal` - If false, crops that have been fertilized with bone meal will not give skill XP (true by default). Only applies to block sources with `interact` trigger like sweet_berry_bush.
 
+### Building
+
+The building source (`type: building`) gives XP when a player places a block. XP is flat per placement; repeating the same block type within a rolling window of 8 placements applies a decay that progressively reduces XP, and a position that already gave placement XP gives none again for 5 minutes (anti place/break loop).
+
+#### Options
+
+* `block` - A material name in all lowercase that gives XP when placed. (Required)
+* `blocks` - A list of multiple valid materials.
+
 ### Breeding
 
 The breeding source (`type: breeding`) gives XP for animal husbandry actions: breeding, taming, shearing and milking. Repeating the same action on the same animal is limited by built-in cooldowns (5 minutes per parent pair for breeding, 1 minute per animal for milking).

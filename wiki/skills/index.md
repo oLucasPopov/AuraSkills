@@ -17,7 +17,7 @@ Upon reaching a new skill level, players can be rewarded with:
   * Items
   * Money
 
-There are 14 default skills included in the plugin:
+There are 17 default skills included in the plugin:
 
 * Farming
 * Foraging
@@ -33,6 +33,9 @@ There are 14 default skills included in the plugin:
 * Smithing
 * Husbandry
 * Trading
+* Building
+* Culinary
+* Engineering
 
 There are 4 skills present in Beta that were merged or removed in default configs. Servers that migrated from Beta or loaded the legacy preset have these additional skills:
 

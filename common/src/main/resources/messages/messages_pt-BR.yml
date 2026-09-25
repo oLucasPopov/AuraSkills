@@ -292,6 +292,66 @@ abilities:
     desc: Ganhar XP de habilidade tem {value}% de chance de reparar o item segurado ou peça de armadura desgastada com o encantamento de remendo em 1 durabilidade a cada 2 XP de habilidade.
     info: "{value}% Chance de remendo"
   # === Fork skills ===
+  efficient_smelting:
+    name: Fundição Eficiente
+    desc: "Concede {value}% de chance de obter resultados dobrados ao retirar itens de uma fornalha."
+    info: "+{value}% de Chance de Fundição Dobrada"
+  smith:
+    name: Ferreiro
+    desc: "Concede +{value}% de {xp_unit} de Ferraria."
+    info: "+{value}% de {xp_unit} de Ferraria"
+  master_crafted:
+    name: Obra-Prima
+    desc: "Concede {value}% de chance de equipamentos que você fabrica virem com Inquebrável já aplicado."
+    info: "+{value}% de Chance de Obra-Prima"
+  recycler:
+    name: Reciclador
+    desc: "Concede {value}% de chance de recuperar os materiais consumidos em uma mesa de ferraria."
+    info: "+{value}% de Chance de Recuperação de Material"
+  forge_mastery:
+    name: Maestria da Forja
+    desc: "Reduz o custo em níveis de experiência das receitas de bigorna em {value}% (máx 40%)."
+    info: "-{value}% de Custo de Bigorna"
+  twins:
+    name: Gêmeos
+    desc: "Concede {value}% de chance de nascer um segundo filhote ao procriar animais."
+    info: "+{value}% de Chance de Gêmeos"
+  rancher:
+    name: Fazendeiro
+    desc: "Concede +{value}% de {xp_unit} de Pecuária."
+    info: "+{value}% de {xp_unit} de Pecuária"
+  healthy_growth:
+    name: Crescimento Saudável
+    desc: "Animais procriados por você crescem {value}% mais rápido (máx 40%)."
+    info: "+{value}% de Velocidade de Crescimento"
+  gentle_hands:
+    name: Mãos Gentis
+    desc: "Animais domesticados por você ganham {value} de vida máxima extra e um bônus de velocidade de movimento."
+    info: "+{value} de Vida do Animal"
+  bountiful_pasture:
+    name: Pasto Farto
+    desc: "Concede {value}% de chance de obter produtos extras ao tosquiar ou ordenhar animais."
+    info: "+{value}% de Chance de Produto Extra"
+  silver_tongue:
+    name: Lábia
+    desc: "Concede {value}% de chance de receber de volta {refund_percentage}% das esmeraldas gastas em uma negociação."
+    info: "+{value}% de Chance de Reembolso"
+  merchant:
+    name: Mercador
+    desc: "Concede +{value}% de {xp_unit} de Comércio."
+    info: "+{value}% de {xp_unit} de Comércio"
+  charisma:
+    name: Carisma
+    desc: "Concede {value}% de chance de preços com desconto ao abrir as negociações de um aldeão."
+    info: "+{value}% de Chance de Desconto"
+  master_negotiator:
+    name: Mestre Negociador
+    desc: "Concede {value}% de chance de uma negociação não consumir seu estoque (máx 50%)."
+    info: "+{value}% de Chance de Negociação Grátis"
+  guild_reputation:
+    name: Reputação de Guilda
+    desc: "Concede {value}% de chance de receber os itens de uma negociação em dobro (máx 20%)."
+    info: "+{value}% de Chance de Negociação Dobrada"
   spare_materials:
     name: Materiais Sobressalentes
     desc: "Concede {value}% de chance de não consumir o bloco ao colocá-lo."
@@ -771,6 +831,27 @@ mana_abilities:
   not_ready: "<red>Habilidade não está pronta! <gray>({cooldown}s)"
   not_enough_mana: "<yellow>Mana Insuficiente! <gray>({mana} {mana_unit} necessária)"
   # === Fork skills ===
+  forge_overdrive:
+    name: Sobrecarga da Forja
+    desc: "Por {value} segundos, fornalhas num raio de {radius} blocos fundem duas vezes mais rápido e suas retiradas manuais são dobradas. <1>[Clique com carvão para ativar]"
+    raise: "<gray>Você acende um pedaço de carvão"
+    lower: "<gray>Você apaga o carvão"
+    start: "<gold>Sobrecarga da Forja Ativada! <gray>(-{mana} {mana_unit})"
+    end: "<gray>A Sobrecarga da Forja acabou"
+  animal_whisperer:
+    name: Encantador de Animais
+    desc: "Por {value} segundos, animais num raio de {radius} blocos seguem você e os filhotes crescem mais rápido. <1>[Clique com trigo para ativar]"
+    raise: "<gray>Você ergue um feixe de trigo"
+    lower: "<gray>Você abaixa o trigo"
+    start: "<gold>Encantador de Animais Ativado! <gray>(-{mana} {mana_unit})"
+    end: "<gray>O Encantador de Animais acabou"
+  grand_bargain:
+    name: Grande Barganha
+    desc: "Por {value} segundos, todas as negociações ficam {discount_percentage}% mais baratas e nunca ficam sem estoque. <1>[Clique com uma esmeralda para ativar]"
+    raise: "<gray>Você ergue uma esmeralda"
+    lower: "<gray>Você guarda a esmeralda"
+    start: "<gold>Grande Barganha Ativada! <gray>(-{mana} {mana_unit})"
+    end: "<gray>A Grande Barganha acabou"
   blueprint:
     name: Projeto
     desc: "Por {value} segundos, +1.5 de alcance e 15% de chance de não consumir blocos colocados. <1>[Clique com tijolos para ativar]"
@@ -1077,4 +1158,4 @@ units:
   mana: Mana
   hp: HP
   xp: XP
-file_version: 41
+file_version: 42
