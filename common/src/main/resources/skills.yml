@@ -210,5 +210,18 @@ skills:
       max_level: 100
       check_cancelled: true
       check_multiplier_permissions: true
+  auraskills/engineering:
+    abilities:
+      - auraskills/spare_parts
+      - auraskills/engineer
+      - auraskills/efficient_crafting
+      - auraskills/railroad_baron
+      - auraskills/tinkerers_luck
+    mana_ability: auraskills/power_surge
+    options:
+      enabled: true
+      max_level: 100
+      check_cancelled: true
+      check_multiplier_permissions: true
 # === Fork skills ===
 file_version: 3

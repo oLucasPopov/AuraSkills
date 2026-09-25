@@ -1,0 +1,133 @@
+sources:
+  craft_bulk_rail:
+    type: crafting
+    items:
+      - rail
+      - activator_rail
+    xp: 0.2
+    menu_item:
+      material: rail
+  craft_special_rail:
+    type: crafting
+    items:
+      - powered_rail
+      - detector_rail
+    xp: 0.5
+    menu_item:
+      material: powered_rail
+  craft_basic_components:
+    type: crafting
+    items:
+      - redstone_torch
+      - lever
+      - note_block
+      - tripwire_hook
+    xp: 1.0
+    menu_item:
+      material: redstone_torch
+  craft_plates_and_doors:
+    type: crafting
+    items:
+      - light_weighted_pressure_plate
+      - heavy_weighted_pressure_plate
+      - iron_door
+      - iron_trapdoor
+    xp: 1.5
+    menu_item:
+      material: iron_door
+  craft_mid_components:
+    type: crafting
+    items:
+      - repeater
+      - lightning_rod
+      - minecart
+      - dropper
+      - target
+    xp: 2.5
+    menu_item:
+      material: repeater
+  craft_advanced_components:
+    type: crafting
+    items:
+      - observer
+      - comparator
+      - dispenser
+      - redstone_lamp
+      - piston
+      - daylight_detector
+    xp: 3.0
+    menu_item:
+      material: piston
+  craft_utility_vehicles:
+    type: crafting
+    items:
+      - chest_minecart
+      - furnace_minecart
+      - hopper_minecart
+    xp: 3.5
+    menu_item:
+      material: hopper_minecart
+  craft_heavy_components:
+    type: crafting
+    items:
+      - tnt
+      - sticky_piston
+      - hopper
+      - tnt_minecart
+      - crafter
+    xp: 4.0
+    menu_item:
+      material: hopper
+  craft_jukebox:
+    type: crafting
+    items:
+      - jukebox
+    xp: 6.0
+    menu_item:
+      material: jukebox
+  place_rail:
+    type: building
+    blocks:
+      - rail
+      - powered_rail
+      - detector_rail
+      - activator_rail
+    xp: 0.25
+    menu_item:
+      material: rail
+  place_basic_components:
+    type: building
+    blocks:
+      - lever
+      - redstone_torch
+      - stone_pressure_plate
+      - oak_pressure_plate
+      - stone_button
+      - oak_button
+      - tripwire_hook
+    xp: 0.5
+    menu_item:
+      material: lever
+  place_components:
+    type: building
+    blocks:
+      - piston
+      - sticky_piston
+      - observer
+      - dispenser
+      - dropper
+      - repeater
+      - comparator
+      - hopper
+      - redstone_lamp
+      - target
+      - crafter
+      - daylight_detector
+      - lightning_rod
+      - note_block
+      - jukebox
+    xp: 1.0
+    menu_item:
+      material: observer
+
+file_version: 1

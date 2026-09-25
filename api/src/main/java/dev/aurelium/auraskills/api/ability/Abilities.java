@@ -107,7 +107,12 @@ public enum Abilities implements Ability {
     CHEF("culinary"),
     HEARTY_MEALS("culinary"),
     GOURMET("culinary"),
-    WELL_FED("culinary");
+    WELL_FED("culinary"),
+    SPARE_PARTS("engineering"),
+    ENGINEER("engineering"),
+    EFFICIENT_CRAFTING("engineering"),
+    RAILROAD_BARON("engineering"),
+    TINKERERS_LUCK("engineering");
 
     private final NamespacedId id;
     private final boolean hasSecondaryValue;
