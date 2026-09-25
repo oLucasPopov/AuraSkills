@@ -1,5 +1,6 @@
 package dev.aurelium.auraskills.bukkit.skills.building;
 
+import dev.aurelium.auraskills.api.event.user.UserLoadEvent;
 import dev.aurelium.auraskills.api.mana.ManaAbilities;
 import dev.aurelium.auraskills.bukkit.AuraSkills;
 import dev.aurelium.auraskills.bukkit.mana.ReadiedManaAbility;
@@ -85,6 +86,16 @@ public class Blueprint extends ReadiedManaAbility {
         Material type = event.getItemInHand().getType();
         if (!type.isItem()) return;
         plugin.getScheduler().scheduleSync(() -> giveOrDrop(player, new ItemStack(type, 1)), 50, TimeUnit.MILLISECONDS);
+    }
+
+    @EventHandler
+    public void blueprintJoin(UserLoadEvent event) {
+        // Remove a reach modifier left over in player NBT by a crash mid-activation
+        Player player = event.getPlayer();
+        if (isActivated(plugin.getUser(player))) return;
+        AttributeInstance attribute = player.getAttribute(Attribute.BLOCK_INTERACTION_RANGE);
+        if (attribute == null) return;
+        removeBlueprintModifier(attribute);
     }
 
     private void removeBlueprintModifier(AttributeInstance attribute) {

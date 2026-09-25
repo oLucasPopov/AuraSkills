@@ -2,11 +2,13 @@ package dev.aurelium.auraskills.bukkit.skills.building;
 
 import dev.aurelium.auraskills.api.ability.Abilities;
 import dev.aurelium.auraskills.api.event.skill.SkillLevelUpEvent;
+import dev.aurelium.auraskills.api.event.user.UserLoadEvent;
 import dev.aurelium.auraskills.api.skill.Skills;
 import dev.aurelium.auraskills.bukkit.AuraSkills;
 import dev.aurelium.auraskills.bukkit.ability.BukkitAbilityImpl;
 import dev.aurelium.auraskills.bukkit.util.VersionUtils;
 import dev.aurelium.auraskills.common.user.User;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
@@ -21,7 +23,6 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.EquipmentSlotGroup;
 import org.bukkit.inventory.ItemStack;
 
@@ -71,6 +72,7 @@ public class BuildingAbilities extends BukkitAbilityImpl {
         if (isDisabled(ability)) return;
 
         Player player = event.getPlayer();
+        if (player.getGameMode() == GameMode.CREATIVE) return;
         if (failsChecks(player, ability)) return;
         if (plugin.getUser(player).getAbilityLevel(ability) <= 0) return;
 
@@ -88,6 +90,7 @@ public class BuildingAbilities extends BukkitAbilityImpl {
 
         Player player = event.getPlayer();
         if (!placer.equals(player.getUniqueId())) return;
+        if (player.getGameMode() == GameMode.CREATIVE) return;
         if (failsChecks(player, ability)) return;
 
         User user = plugin.getUser(player);
@@ -115,7 +118,7 @@ public class BuildingAbilities extends BukkitAbilityImpl {
     }
 
     @EventHandler
-    public void longReachJoin(PlayerJoinEvent event) {
+    public void longReachJoin(UserLoadEvent event) {
         applyLongReach(event.getPlayer());
     }
 
