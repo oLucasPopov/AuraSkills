@@ -74,7 +74,11 @@ public enum ManaAbilityMessage implements MessageKey {
     BLUEPRINT_START,
     BLUEPRINT_END,
     BLUEPRINT_RAISE,
-    BLUEPRINT_LOWER;
+    BLUEPRINT_LOWER,
+    BANQUET_START,
+    BANQUET_END,
+    BANQUET_RAISE,
+    BANQUET_LOWER;
 
     private final String path;
 

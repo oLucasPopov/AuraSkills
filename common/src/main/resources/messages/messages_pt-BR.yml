@@ -312,6 +312,26 @@ abilities:
     name: Mãos Firmes
     desc: "Reduz o dano de queda em {value}% enquanto segura um bloco."
     info: "-{value}% de Dano de Queda"
+  extra_servings:
+    name: Porções Extras
+    desc: "Concede {value}% de chance de obter resultado dobrado ao retirar comida cozida."
+    info: "+{value}% de Chance de Porção Extra"
+  chef:
+    name: Chef
+    desc: "Concede +{value}% de {xp_unit} de Culinária."
+    info: "+{value}% de {xp_unit} de Culinária"
+  hearty_meals:
+    name: Refeições Fartas
+    desc: "Comida que você cozinhou ou fabricou restaura {value}% mais fome."
+    info: "+{value}% de Restauração de Fome"
+  gourmet:
+    name: Gourmet
+    desc: "Concede {value}% de chance de não consumir um ingrediente ao fabricar comida."
+    info: "+{value}% de Chance de Economizar Ingrediente"
+  well_fed:
+    name: Bem Alimentado
+    desc: "Comer comida cozida ou fabricada concede Regeneração por {value} segundos."
+    info: "Regeneração por {value}s"
 acf:
   core:
     permission_denied: "<red>Desculpe, mas você não tem permissão para executar este comando."
@@ -738,6 +758,13 @@ mana_abilities:
     lower: "<gray>Você enrola o projeto"
     start: "<gold>Projeto Ativado! <gray>(-{mana} {mana_unit})"
     end: "<gray>Projeto acabou"
+  banquet:
+    name: Banquete
+    desc: "Por {value} segundos, você e jogadores próximos ganham Saturação e Regeneração. <1>[Clique com uma tigela para ativar]"
+    raise: "<gray>Você ergue uma tigela de banquete"
+    lower: "<gray>Você abaixa a tigela"
+    start: "<gold>Banquete Ativado! <gray>(-{mana} {mana_unit})"
+    end: "<gray>O banquete terminou"
 skills:
   farming:
     name: Agricultura
@@ -797,6 +824,9 @@ skills:
   building:
     name: Construção
     desc: "Coloque blocos processados para ganhar {xp_unit} de Construção"
+  culinary:
+    name: Culinária
+    desc: "Cozinhe e fabrique comidas para ganhar {xp_unit} de Culinária"
 sources:
   fishing:
     cod: Bacalhau

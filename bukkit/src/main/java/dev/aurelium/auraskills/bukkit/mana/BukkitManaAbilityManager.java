@@ -5,6 +5,7 @@ import dev.aurelium.auraskills.api.util.NumberUtil;
 import dev.aurelium.auraskills.bukkit.AuraSkills;
 import dev.aurelium.auraskills.bukkit.skills.archery.ChargedShot;
 import dev.aurelium.auraskills.bukkit.skills.building.Blueprint;
+import dev.aurelium.auraskills.bukkit.skills.culinary.Banquet;
 import dev.aurelium.auraskills.bukkit.skills.defense.Absorption;
 import dev.aurelium.auraskills.bukkit.skills.excavation.Terraform;
 import dev.aurelium.auraskills.bukkit.skills.farming.Replenish;
@@ -56,6 +57,7 @@ public class BukkitManaAbilityManager extends ManaAbilityManager {
         registerProvider(new GrandBargain(plugin));
         // === Fork skills: building, culinary, engineering ===
         registerProvider(new Blueprint(plugin));
+        registerProvider(new Banquet(plugin));
     }
 
     private void registerProvider(ManaAbilityProvider provider) {

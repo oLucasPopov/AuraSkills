@@ -372,6 +372,26 @@ abilities:
     name: Steady Hands
     desc: "Reduces fall damage by {value}% while holding a block."
     info: "-{value}% Fall Damage"
+  extra_servings:
+    name: Extra Servings
+    desc: "Grants a {value}% chance to get double results when extracting cooked food."
+    info: "+{value}% Extra Servings Chance"
+  chef:
+    name: Chef
+    desc: "Grants +{value}% Culinary {xp_unit}."
+    info: "+{value}% Culinary {xp_unit}"
+  hearty_meals:
+    name: Hearty Meals
+    desc: "Food you cooked or crafted restores {value}% more hunger."
+    info: "+{value}% Food Restoration"
+  gourmet:
+    name: Gourmet
+    desc: "Grants a {value}% chance to not consume one ingredient when crafting food."
+    info: "+{value}% Ingredient Save Chance"
+  well_fed:
+    name: Well Fed
+    desc: "Eating cooked or crafted food grants Regeneration for {value} seconds."
+    info: "{value}s Regeneration"
 acf:
   core:
     permission_denied: "<red>I'm sorry, but you do not have permission to perform this command."
@@ -968,6 +988,13 @@ mana_abilities:
     lower: "<gray>You roll up the blueprint"
     start: "<gold>Blueprint Activated! <gray>(-{mana} {mana_unit})"
     end: "<gray>Blueprint has worn off"
+  banquet:
+    name: Banquet
+    desc: "For {value} seconds, you and nearby players gain Saturation and Regeneration. <1>[Right click a bowl to activate]"
+    raise: "<gray>You raise a feast bowl"
+    lower: "<gray>You lower the bowl"
+    start: "<gold>Banquet Activated! <gray>(-{mana} {mana_unit})"
+    end: "<gray>The banquet has ended"
 skills:
   farming:
     name: Farming
@@ -1027,6 +1054,9 @@ skills:
   building:
     name: Building
     desc: "Place processed blocks to earn Building {xp_unit}"
+  culinary:
+    name: Culinary
+    desc: "Cook and craft food to earn Culinary {xp_unit}"
 sources:
   fishing:
     cod: Cod
