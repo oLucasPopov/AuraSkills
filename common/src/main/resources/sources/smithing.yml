@@ -31,29 +31,47 @@ sources:
     menu_item:
       material: silence_armor_trim_smithing_template
   # === Smelting (furnace, blast furnace and smoker) ===
-  smelt_ores:
+  smelt_common_ores:
     type: smelting
     items:
       - iron_ingot
-      - gold_ingot
       - copper_ingot
-      - netherite_scrap
       - coal
-      - diamond
-      - emerald
-      - lapis_lazuli
-      - redstone
-      - quartz
-    xp: 4.0
+    xp: 1.0
     menu_item:
       material: iron_ingot
+  smelt_precious_ores:
+    type: smelting
+    items:
+      - gold_ingot
+      - redstone
+      - lapis_lazuli
+      - quartz
+    xp: 2.0
+    menu_item:
+      material: gold_ingot
+  smelt_gem_ores:
+    type: smelting
+    items:
+      - diamond
+      - emerald
+    xp: 5.0
+    menu_item:
+      material: diamond
+  smelt_netherite_scrap:
+    type: smelting
+    items:
+      - netherite_scrap
+    xp: 15.0
+    menu_item:
+      material: netherite_scrap
   smelt_nuggets:
     type: smelting
     items:
       - iron_nugget
       - gold_nugget
       - copper_nugget
-    xp: 1.0
+    xp: 0.5
     menu_item:
       material: iron_nugget
   smelt_food:
@@ -68,7 +86,7 @@ sources:
       - cooked_salmon
       - baked_potato
       - dried_kelp
-    xp: 2.0
+    xp: 1.0
     menu_item:
       material: cooked_beef
   smelt_glazed_terracotta:
@@ -90,7 +108,7 @@ sources:
       - green_glazed_terracotta
       - red_glazed_terracotta
       - black_glazed_terracotta
-    xp: 1.5
+    xp: 1.0
     menu_item:
       material: purple_glazed_terracotta
   smelt_misc:
@@ -119,7 +137,7 @@ sources:
       - lime_dye
       - leaf_litter
       - resin_brick
-    xp: 1.0
+    xp: 0.5
     menu_item:
       material: glass
   # === Crafting ===
@@ -277,4 +295,4 @@ sources:
     menu_item:
       material: netherite_upgrade_smithing_template
 
-file_version: 1
+file_version: 2

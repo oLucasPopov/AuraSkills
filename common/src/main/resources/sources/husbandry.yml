@@ -7,12 +7,19 @@ sources:
       - sheep
       - pig
       - chicken
+    xp: 3.0
+    menu_item:
+      material: wheat
+  breed_uncommon:
+    type: breeding
+    trigger: breed
+    entities:
       - rabbit
       - goat
       - frog
-    xp: 8.0
+    xp: 5.0
     menu_item:
-      material: wheat
+      material: carrot
   breed_pets:
     type: breeding
     trigger: breed
@@ -20,7 +27,7 @@ sources:
       - wolf
       - cat
       - ocelot
-    xp: 15.0
+    xp: 6.0
     menu_item:
       material: cod
   breed_nether:
@@ -29,7 +36,7 @@ sources:
     entities:
       - hoglin
       - strider
-    xp: 15.0
+    xp: 8.0
     menu_item:
       material: crimson_fungus
   breed_horse:
@@ -39,14 +46,14 @@ sources:
       - horse
       - donkey
       - llama
-    xp: 20.0
+    xp: 10.0
     menu_item:
       material: golden_carrot
   breed_mule:
     type: breeding
     trigger: breed
     entity: mule
-    xp: 40.0
+    xp: 25.0
     menu_item:
       material: saddle
   breed_rare:
@@ -60,7 +67,7 @@ sources:
       - panda
       - fox
       - bee
-    xp: 35.0
+    xp: 20.0
     menu_item:
       material: lily_pad
   breed_special:
@@ -70,14 +77,14 @@ sources:
       - armadillo
       - happy_ghast
       - nautilus
-    xp: 30.0
+    xp: 15.0
     menu_item:
       material: armadillo_scute
   tame_wolf:
     type: breeding
     trigger: tame
     entity: wolf
-    xp: 25.0
+    xp: 15.0
     menu_item:
       material: bone
   tame_cat:
@@ -86,14 +93,14 @@ sources:
     entities:
       - cat
       - ocelot
-    xp: 25.0
+    xp: 15.0
     menu_item:
       material: raw_cod
   tame_parrot:
     type: breeding
     trigger: tame
     entity: parrot
-    xp: 30.0
+    xp: 20.0
     menu_item:
       material: wheat_seeds
   tame_horse:
@@ -103,49 +110,49 @@ sources:
       - horse
       - donkey
       - llama
-    xp: 20.0
+    xp: 12.0
     menu_item:
       material: apple
   tame_nautilus:
     type: breeding
     trigger: tame
     entity: nautilus
-    xp: 30.0
+    xp: 20.0
     menu_item:
       material: pufferfish
   shear_sheep:
     type: breeding
     trigger: shear
     entity: sheep
-    xp: 5.0
+    xp: 3.0
     menu_item:
       material: white_wool
   shear_mooshroom:
     type: breeding
     trigger: shear
     entity: mooshroom
-    xp: 8.0
+    xp: 5.0
     menu_item:
       material: red_mushroom
   shear_bogged:
     type: breeding
     trigger: shear
     entity: bogged
-    xp: 8.0
+    xp: 5.0
     menu_item:
       material: brown_mushroom
   shear_snow_golem:
     type: breeding
     trigger: shear
     entity: snow_golem
-    xp: 5.0
+    xp: 3.0
     menu_item:
       material: carved_pumpkin
   shear_wolf_armor:
     type: breeding
     trigger: shear
     entity: wolf
-    xp: 4.0
+    xp: 2.0
     menu_item:
       material: wolf_armor
   milk_animal:
@@ -155,8 +162,8 @@ sources:
       - cow
       - goat
       - mooshroom
-    xp: 3.0
+    xp: 2.0
     menu_item:
       material: milk_bucket
 
-file_version: 1
+file_version: 2

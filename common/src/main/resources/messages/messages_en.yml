@@ -1064,27 +1064,45 @@ sources:
     netherite_upgrade: Netherite Upgrade
     armor_trim: Apply Armor Trim
   smelting:
-    smelt_ores: Smelt Ores
+    smelt_common_ores: Smelt Common Ores
+    smelt_precious_ores: Smelt Precious Ores
+    smelt_gem_ores: Smelt Gems
+    smelt_netherite_scrap: Smelt Netherite Scrap
+    smelt_nuggets: Smelt Metal Nuggets
     smelt_food: Cook Food
+    smelt_glazed_terracotta: Fire Glazed Terracotta
     smelt_misc: Smelt Materials
   crafting:
     craft_diamond_equipment: Craft Diamond Equipment
     craft_iron_equipment: Craft Iron Equipment
     craft_golden_equipment: Craft Golden Equipment
+    craft_copper_equipment: Craft Copper Equipment
     craft_stone_equipment: Craft Stone Equipment
     craft_wooden_equipment: Craft Basic Equipment
+    craft_mace: Craft a Mace
+    craft_special_equipment: Craft Special Equipment
+    craft_leather_horse_armor: Craft Leather Horse Armor
+    craft_utility_tools: Craft Utility Tools
+    craft_smithing_templates: Duplicate Smithing Templates
   breeding:
     breed_common: Breed Farm Animals
+    breed_uncommon: Breed Small Livestock
+    breed_pets: Breed Pets
+    breed_nether: Breed Nether Creatures
     breed_horse: Breed Horses
     breed_mule: Breed a Mule
     breed_rare: Breed Rare Animals
+    breed_special: Breed Exotic Animals
     tame_wolf: Tame a Wolf
     tame_cat: Tame a Cat
     tame_parrot: Tame a Parrot
     tame_horse: Tame a Horse
+    tame_nautilus: Tame a Nautilus
     shear_sheep: Shear a Sheep
     shear_mooshroom: Shear a Mooshroom
+    shear_bogged: Shear a Bogged
     shear_snow_golem: Shear a Snow Golem
+    shear_wolf_armor: Remove Wolf Armor
     milk_animal: Milk an Animal
   trading:
     novice_trade: Trade with a Novice Villager
@@ -1094,7 +1112,15 @@ sources:
     master_trade: Trade with a Master Villager
     wandering_trader_trade: Trade with a Wandering Trader
     piglin_barter: Barter with a Piglin
-    piglin_barter_rare: Rare Piglin Barter
+    piglin_barter_ender_pearl: Barter for Ender Pearls
+    piglin_barter_enchanted_book: Barter for a Soul Speed Book
+    piglin_barter_enchanted_boots: Barter for Enchanted Boots
+    piglin_barter_fire_resistance_potion: Barter for Fire Resistance
+    piglin_barter_fire_resistance_splash: Barter for Splash Fire Resistance
+    piglin_barter_dried_ghast: Barter for a Dried Ghast
+    piglin_barter_crying_obsidian: Barter for Crying Obsidian
+    piglin_barter_obsidian: Barter for Obsidian
+    piglin_barter_quartz: Barter for Quartz
 stats:
   strength:
     name: Strength

@@ -755,6 +755,16 @@ skills:
   forging:
     name: Forjar
     desc: "Combine e aplique livros na bigorna para ganhar Forja {xp_unit}"
+  # === Fork skills ===
+  smithing:
+    name: Ferraria
+    desc: "Forje, funda e fabrique equipamentos para ganhar {xp_unit} de Ferraria"
+  husbandry:
+    name: Pecuária
+    desc: "Procrie, domestique e cuide de animais para ganhar {xp_unit} de Pecuária"
+  trading:
+    name: Comércio
+    desc: "Negocie com aldeões e troque com piglins para ganhar {xp_unit} de Comércio"
 sources:
   fishing:
     cod: Bacalhau
@@ -817,6 +827,68 @@ sources:
     combine_level: Custo de XP da Bigorn
     grindstone_level: Nível de Encantamento no item
     enchant_level: Nível de Encantamento Recebido
+  # === Fork skills ===
+  smithing:
+    netherite_upgrade: Aprimoramento de Netherite
+    armor_trim: Aplique um Enfeite de Armadura
+  smelting:
+    smelt_common_ores: Funda Minérios Comuns
+    smelt_precious_ores: Funda Minérios Preciosos
+    smelt_gem_ores: Funda Gemas
+    smelt_netherite_scrap: Funda Fragmentos de Netherite
+    smelt_nuggets: Funda Pepitas de Metal
+    smelt_food: Cozinhe Comida
+    smelt_glazed_terracotta: Queime Terracota Esmaltada
+    smelt_misc: Funda Materiais
+  crafting:
+    craft_diamond_equipment: Fabrique Equipamento de Diamante
+    craft_iron_equipment: Fabrique Equipamento de Ferro
+    craft_golden_equipment: Fabrique Equipamento de Ouro
+    craft_copper_equipment: Fabrique Equipamento de Cobre
+    craft_stone_equipment: Fabrique Equipamento de Pedra
+    craft_wooden_equipment: Fabrique Equipamento Básico
+    craft_mace: Fabrique uma Maça
+    craft_special_equipment: Fabrique Equipamento Especial
+    craft_leather_horse_armor: Fabrique Armadura de Couro para Cavalo
+    craft_utility_tools: Fabrique Ferramentas Utilitárias
+    craft_smithing_templates: Duplique Moldes de Ferraria
+  breeding:
+    breed_common: Procrie Animais de Fazenda
+    breed_uncommon: Procrie Animais Pequenos
+    breed_pets: Procrie Animais de Estimação
+    breed_nether: Procrie Criaturas do Nether
+    breed_horse: Procrie Cavalos
+    breed_mule: Procrie uma Mula
+    breed_rare: Procrie Animais Raros
+    breed_special: Procrie Animais Exóticos
+    tame_wolf: Domestique um Lobo
+    tame_cat: Domestique um Gato
+    tame_parrot: Domestique um Papagaio
+    tame_horse: Domestique um Cavalo
+    tame_nautilus: Domestique um Nautilus
+    shear_sheep: Tosqueie uma Ovelha
+    shear_mooshroom: Tosqueie uma Coguvaca
+    shear_bogged: Tosqueie um Bogged
+    shear_snow_golem: Tosqueie um Golem de Neve
+    shear_wolf_armor: Remova a Armadura de Lobo
+    milk_animal: Ordene um Animal
+  trading:
+    novice_trade: Negocie com um Aldeão Novato
+    apprentice_trade: Negocie com um Aldeão Aprendiz
+    journeyman_trade: Negocie com um Aldeão Profissional
+    expert_trade: Negocie com um Aldeão Especialista
+    master_trade: Negocie com um Aldeão Mestre
+    wandering_trader_trade: Negocie com um Comerciante Ambulante
+    piglin_barter: Troque com um Piglin
+    piglin_barter_ender_pearl: Troque por Pérolas de Ender
+    piglin_barter_enchanted_book: Troque por um Livro de Soul Speed
+    piglin_barter_enchanted_boots: Troque por Botas Encantadas
+    piglin_barter_fire_resistance_potion: Troque por Poção de Resistência ao Fogo
+    piglin_barter_fire_resistance_splash: Troque por Poção Arremessável de Resistência ao Fogo
+    piglin_barter_dried_ghast: Troque por um Ghast Seco
+    piglin_barter_crying_obsidian: Troque por Obsidiana Chorosa
+    piglin_barter_obsidian: Troque por Obsidiana
+    piglin_barter_quartz: Troque por Quartzo
 stats:
   strength:
     name: Força
