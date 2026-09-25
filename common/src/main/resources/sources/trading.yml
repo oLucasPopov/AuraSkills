@@ -1,27 +1,12 @@
 sources:
-  novice_trade:
+  # Villager trades by villager level (1 = novice ... 5 = master), any profession
+  master_trade:
     type: trading
     trigger: villager_trade
-    max_villager_level: 1
-    xp: 10.0
+    min_villager_level: 5
+    xp: 30.0
     menu_item:
-      material: emerald
-  apprentice_trade:
-    type: trading
-    trigger: villager_trade
-    min_villager_level: 2
-    max_villager_level: 2
-    xp: 15.0
-    menu_item:
-      material: emerald
-  journeyman_trade:
-    type: trading
-    trigger: villager_trade
-    min_villager_level: 3
-    max_villager_level: 3
-    xp: 20.0
-    menu_item:
-      material: emerald_block
+      material: diamond
   expert_trade:
     type: trading
     trigger: villager_trade
@@ -30,29 +15,104 @@ sources:
     xp: 25.0
     menu_item:
       material: emerald_block
-  master_trade:
+  journeyman_trade:
     type: trading
     trigger: villager_trade
-    min_villager_level: 5
-    xp: 30.0
+    min_villager_level: 3
+    max_villager_level: 3
+    xp: 20.0
     menu_item:
-      material: diamond
+      material: emerald_block
+  apprentice_trade:
+    type: trading
+    trigger: villager_trade
+    min_villager_level: 2
+    max_villager_level: 2
+    xp: 15.0
+    menu_item:
+      material: emerald
+  novice_trade:
+    type: trading
+    trigger: villager_trade
+    max_villager_level: 1
+    xp: 10.0
+    menu_item:
+      material: emerald
   wandering_trader_trade:
     type: trading
     trigger: wandering_trader_trade
     xp: 15.0
     menu_item:
       material: blue_orchid
-  piglin_barter_rare:
+  # Piglin bartering, tiered by real outcome (first matching source wins, rarest first)
+  piglin_barter_ender_pearl:
     type: trading
     trigger: piglin_barter
-    barter_item: netherite_scrap
+    barter_item: ender_pearl
     xp: 25.0
     menu_item:
-      material: netherite_scrap
+      material: ender_pearl
+  piglin_barter_enchanted_book:
+    type: trading
+    trigger: piglin_barter
+    barter_item: book
+    xp: 25.0
+    menu_item:
+      material: book
+  piglin_barter_enchanted_boots:
+    type: trading
+    trigger: piglin_barter
+    barter_item: iron_boots
+    xp: 20.0
+    menu_item:
+      material: iron_boots
+  piglin_barter_fire_resistance_potion:
+    type: trading
+    trigger: piglin_barter
+    barter_item: potion
+    xp: 15.0
+    menu_item:
+      material: potion
+  piglin_barter_fire_resistance_splash:
+    type: trading
+    trigger: piglin_barter
+    barter_item: splash_potion
+    xp: 15.0
+    menu_item:
+      material: splash_potion
+  piglin_barter_dried_ghast:
+    type: trading
+    trigger: piglin_barter
+    barter_item: dried_ghast
+    xp: 15.0
+    menu_item:
+      material: dried_ghast
+  piglin_barter_crying_obsidian:
+    type: trading
+    trigger: piglin_barter
+    barter_item: crying_obsidian
+    xp: 12.0
+    menu_item:
+      material: crying_obsidian
+  piglin_barter_obsidian:
+    type: trading
+    trigger: piglin_barter
+    barter_item: obsidian
+    xp: 10.0
+    menu_item:
+      material: obsidian
+  piglin_barter_quartz:
+    type: trading
+    trigger: piglin_barter
+    barter_item: quartz
+    xp: 10.0
+    menu_item:
+      material: nether_quartz_ore
   piglin_barter:
     type: trading
     trigger: piglin_barter
     xp: 5.0
     menu_item:
       material: gold_ingot
+
+file_version: 1

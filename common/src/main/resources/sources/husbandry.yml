@@ -13,6 +13,25 @@ sources:
     xp: 8.0
     menu_item:
       material: wheat
+  breed_pets:
+    type: breeding
+    trigger: breed
+    entities:
+      - wolf
+      - cat
+      - ocelot
+    xp: 15.0
+    menu_item:
+      material: cod
+  breed_nether:
+    type: breeding
+    trigger: breed
+    entities:
+      - hoglin
+      - strider
+    xp: 15.0
+    menu_item:
+      material: crimson_fungus
   breed_horse:
     type: breeding
     trigger: breed
@@ -44,6 +63,16 @@ sources:
     xp: 35.0
     menu_item:
       material: lily_pad
+  breed_special:
+    type: breeding
+    trigger: breed
+    entities:
+      - armadillo
+      - happy_ghast
+      - nautilus
+    xp: 30.0
+    menu_item:
+      material: armadillo_scute
   tame_wolf:
     type: breeding
     trigger: tame
@@ -54,7 +83,9 @@ sources:
   tame_cat:
     type: breeding
     trigger: tame
-    entity: cat
+    entities:
+      - cat
+      - ocelot
     xp: 25.0
     menu_item:
       material: raw_cod
@@ -75,6 +106,13 @@ sources:
     xp: 20.0
     menu_item:
       material: apple
+  tame_nautilus:
+    type: breeding
+    trigger: tame
+    entity: nautilus
+    xp: 30.0
+    menu_item:
+      material: pufferfish
   shear_sheep:
     type: breeding
     trigger: shear
@@ -89,6 +127,13 @@ sources:
     xp: 8.0
     menu_item:
       material: red_mushroom
+  shear_bogged:
+    type: breeding
+    trigger: shear
+    entity: bogged
+    xp: 8.0
+    menu_item:
+      material: brown_mushroom
   shear_snow_golem:
     type: breeding
     trigger: shear
@@ -96,6 +141,13 @@ sources:
     xp: 5.0
     menu_item:
       material: carved_pumpkin
+  shear_wolf_armor:
+    type: breeding
+    trigger: shear
+    entity: wolf
+    xp: 4.0
+    menu_item:
+      material: wolf_armor
   milk_animal:
     type: breeding
     trigger: milk
@@ -106,3 +158,5 @@ sources:
     xp: 3.0
     menu_item:
       material: milk_bucket
+
+file_version: 1

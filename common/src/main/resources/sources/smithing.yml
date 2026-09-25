@@ -1,4 +1,5 @@
 sources:
+  # === Smithing table ===
   netherite_upgrade:
     type: smithing
     addition: netherite_ingot
@@ -29,6 +30,7 @@ sources:
     xp: 15.0
     menu_item:
       material: silence_armor_trim_smithing_template
+  # === Smelting (furnace, blast furnace and smoker) ===
   smelt_ores:
     type: smelting
     items:
@@ -36,10 +38,24 @@ sources:
       - gold_ingot
       - copper_ingot
       - netherite_scrap
-      - ancient_debris
+      - coal
+      - diamond
+      - emerald
+      - lapis_lazuli
+      - redstone
+      - quartz
     xp: 4.0
     menu_item:
       material: iron_ingot
+  smelt_nuggets:
+    type: smelting
+    items:
+      - iron_nugget
+      - gold_nugget
+      - copper_nugget
+    xp: 1.0
+    menu_item:
+      material: iron_nugget
   smelt_food:
     type: smelting
     items:
@@ -55,19 +71,58 @@ sources:
     xp: 2.0
     menu_item:
       material: cooked_beef
+  smelt_glazed_terracotta:
+    type: smelting
+    items:
+      - white_glazed_terracotta
+      - orange_glazed_terracotta
+      - magenta_glazed_terracotta
+      - light_blue_glazed_terracotta
+      - yellow_glazed_terracotta
+      - lime_glazed_terracotta
+      - pink_glazed_terracotta
+      - gray_glazed_terracotta
+      - light_gray_glazed_terracotta
+      - cyan_glazed_terracotta
+      - purple_glazed_terracotta
+      - blue_glazed_terracotta
+      - brown_glazed_terracotta
+      - green_glazed_terracotta
+      - red_glazed_terracotta
+      - black_glazed_terracotta
+    xp: 1.5
+    menu_item:
+      material: purple_glazed_terracotta
   smelt_misc:
     type: smelting
     items:
       - glass
       - stone
       - smooth_stone
+      - smooth_basalt
+      - smooth_quartz
+      - smooth_sandstone
+      - smooth_red_sandstone
+      - deepslate
       - charcoal
       - brick
       - nether_brick
       - terracotta
+      - cracked_stone_bricks
+      - cracked_deepslate_bricks
+      - cracked_deepslate_tiles
+      - cracked_nether_bricks
+      - cracked_polished_blackstone_bricks
+      - popped_chorus_fruit
+      - sponge
+      - green_dye
+      - lime_dye
+      - leaf_litter
+      - resin_brick
     xp: 1.0
     menu_item:
       material: glass
+  # === Crafting ===
   craft_diamond_equipment:
     type: crafting
     items:
@@ -117,6 +172,22 @@ sources:
     xp: 12.0
     menu_item:
       material: golden_helmet
+  craft_copper_equipment:
+    type: crafting
+    items:
+      - copper_sword
+      - copper_pickaxe
+      - copper_axe
+      - copper_shovel
+      - copper_hoe
+      - copper_helmet
+      - copper_chestplate
+      - copper_leggings
+      - copper_boots
+      - copper_spear
+    xp: 5.0
+    menu_item:
+      material: copper_chestplate
   craft_stone_equipment:
     type: crafting
     items:
@@ -148,3 +219,62 @@ sources:
     xp: 2.0
     menu_item:
       material: wooden_pickaxe
+  craft_mace:
+    type: crafting
+    items:
+      - mace
+    xp: 40.0
+    menu_item:
+      material: mace
+  craft_special_equipment:
+    type: crafting
+    items:
+      - turtle_helmet
+      - wolf_armor
+      - saddle
+    xp: 10.0
+    menu_item:
+      material: turtle_helmet
+  craft_leather_horse_armor:
+    type: crafting
+    items:
+      - leather_horse_armor
+    xp: 6.0
+    menu_item:
+      material: leather_horse_armor
+  craft_utility_tools:
+    type: crafting
+    items:
+      - shears
+      - flint_and_steel
+      - brush
+    xp: 3.0
+    menu_item:
+      material: shears
+  craft_smithing_templates:
+    type: crafting
+    items:
+      - netherite_upgrade_smithing_template
+      - sentry_armor_trim_smithing_template
+      - vex_armor_trim_smithing_template
+      - wild_armor_trim_smithing_template
+      - coast_armor_trim_smithing_template
+      - dune_armor_trim_smithing_template
+      - ward_armor_trim_smithing_template
+      - tide_armor_trim_smithing_template
+      - snout_armor_trim_smithing_template
+      - rib_armor_trim_smithing_template
+      - eye_armor_trim_smithing_template
+      - spire_armor_trim_smithing_template
+      - wayfinder_armor_trim_smithing_template
+      - shaper_armor_trim_smithing_template
+      - raiser_armor_trim_smithing_template
+      - host_armor_trim_smithing_template
+      - silence_armor_trim_smithing_template
+      - flow_armor_trim_smithing_template
+      - bolt_armor_trim_smithing_template
+    xp: 12.0
+    menu_item:
+      material: netherite_upgrade_smithing_template
+
+file_version: 1
