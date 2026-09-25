@@ -131,6 +131,14 @@ templates:
         flags: hide_potion_effects
       forging:
         material: anvil
+      # === Fork skills: trading, husbandry, smithing ===
+      trading:
+        material: emerald
+      husbandry:
+        material: wheat
+      smithing:
+        material: netherite_upgrade_smithing_template
+      # === End fork skills ===
     display_name: '<aqua>{skill} <dark_aqua>{level}'
     lore:
     - text: '{desc}'
