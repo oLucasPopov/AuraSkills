@@ -69,7 +69,12 @@ public enum ManaAbilityMessage implements MessageKey {
     GRAND_BARGAIN_START,
     GRAND_BARGAIN_END,
     GRAND_BARGAIN_RAISE,
-    GRAND_BARGAIN_LOWER;
+    GRAND_BARGAIN_LOWER,
+    // === Fork skills: building, culinary, engineering ===
+    BLUEPRINT_START,
+    BLUEPRINT_END,
+    BLUEPRINT_RAISE,
+    BLUEPRINT_LOWER;
 
     private final String path;
 

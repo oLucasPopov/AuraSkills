@@ -291,6 +291,27 @@ abilities:
     name: Habilidade de Remendo
     desc: Ganhar XP de habilidade tem {value}% de chance de reparar o item segurado ou peça de armadura desgastada com o encantamento de remendo em 1 durabilidade a cada 2 XP de habilidade.
     info: "{value}% Chance de remendo"
+  # === Fork skills ===
+  spare_materials:
+    name: Materiais Sobressalentes
+    desc: "Concede {value}% de chance de não consumir o bloco ao colocá-lo."
+    info: "+{value}% de Chance de Economia"
+  builder:
+    name: Construtor
+    desc: "Concede +{value}% de {xp_unit} de Construção."
+    info: "+{value}% de {xp_unit} de Construção"
+  long_reach:
+    name: Longo Alcance
+    desc: "Aumenta seu alcance de colocação de blocos em {value} blocos."
+    info: "+{value} de Alcance"
+  reclaimer:
+    name: Recuperador
+    desc: "Concede {value}% de chance de obter um drop extra ao quebrar um bloco que você colocou."
+    info: "+{value}% de Chance de Recuperação"
+  steady_hands:
+    name: Mãos Firmes
+    desc: "Reduz o dano de queda em {value}% enquanto segura um bloco."
+    info: "-{value}% de Dano de Queda"
 acf:
   core:
     permission_denied: "<red>Desculpe, mas você não tem permissão para executar este comando."
@@ -709,6 +730,14 @@ mana_abilities:
     end: "<gray>A Lâmina de Relâmpago acabou"
   not_ready: "<red>Habilidade não está pronta! <gray>({cooldown}s)"
   not_enough_mana: "<yellow>Mana Insuficiente! <gray>({mana} {mana_unit} necessária)"
+  # === Fork skills ===
+  blueprint:
+    name: Projeto
+    desc: "Por {value} segundos, +1.5 de alcance e 15% de chance de não consumir blocos colocados. <1>[Clique com tijolos para ativar]"
+    raise: "<gray>Você desenrola um projeto"
+    lower: "<gray>Você enrola o projeto"
+    start: "<gold>Projeto Ativado! <gray>(-{mana} {mana_unit})"
+    end: "<gray>Projeto acabou"
 skills:
   farming:
     name: Agricultura
@@ -765,6 +794,9 @@ skills:
   trading:
     name: Comércio
     desc: "Negocie com aldeões e troque com piglins para ganhar {xp_unit} de Comércio"
+  building:
+    name: Construção
+    desc: "Coloque blocos processados para ganhar {xp_unit} de Construção"
 sources:
   fishing:
     cod: Bacalhau
@@ -889,6 +921,11 @@ sources:
     piglin_barter_crying_obsidian: Troque por Obsidiana Chorosa
     piglin_barter_obsidian: Troque por Obsidiana
     piglin_barter_quartz: Troque por Quartzo
+  building:
+    place_basic: Coloque Blocos Básicos
+    place_mid: Coloque Blocos Processados
+    place_noble: Coloque Blocos Nobres
+    place_prestigious: Coloque Blocos Prestigiados
 stats:
   strength:
     name: Força

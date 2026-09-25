@@ -21,7 +21,9 @@ public enum ManaAbilities implements ManaAbility {
     // === Fork skills: trading, husbandry, smithing ===
     FORGE_OVERDRIVE,
     ANIMAL_WHISPERER,
-    GRAND_BARGAIN;
+    GRAND_BARGAIN,
+    // === Fork skills: building, culinary, engineering ===
+    BLUEPRINT;
 
     @Inject
     private ManaAbilityProvider provider;

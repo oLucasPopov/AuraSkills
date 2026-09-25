@@ -352,6 +352,26 @@ abilities:
     name: Guild Reputation
     desc: "Grants a {value}% chance to receive a trade's items twice (max 20%)."
     info: "+{value}% Double Trade Chance"
+  spare_materials:
+    name: Spare Materials
+    desc: "Grants a {value}% chance to not consume a block when placing it."
+    info: "+{value}% Spare Chance"
+  builder:
+    name: Builder
+    desc: "Grants +{value}% Building {xp_unit}."
+    info: "+{value}% Building {xp_unit}"
+  long_reach:
+    name: Long Reach
+    desc: "Increases your block placement reach by {value} blocks."
+    info: "+{value} Block Reach"
+  reclaimer:
+    name: Reclaimer
+    desc: "Grants a {value}% chance to get an extra drop when breaking a block you placed."
+    info: "+{value}% Reclaim Chance"
+  steady_hands:
+    name: Steady Hands
+    desc: "Reduces fall damage by {value}% while holding a block."
+    info: "-{value}% Fall Damage"
 acf:
   core:
     permission_denied: "<red>I'm sorry, but you do not have permission to perform this command."
@@ -941,6 +961,13 @@ mana_abilities:
     lower: "<gray>You pocket the emerald"
     start: "<gold>Grand Bargain Activated! <gray>(-{mana} {mana_unit})"
     end: "<gray>Grand Bargain has worn off"
+  blueprint:
+    name: Blueprint
+    desc: "For {value} seconds, +1.5 placement reach and 15% chance to not consume placed blocks. <1>[Right click bricks to activate]"
+    raise: "<gray>You unroll a blueprint"
+    lower: "<gray>You roll up the blueprint"
+    start: "<gold>Blueprint Activated! <gray>(-{mana} {mana_unit})"
+    end: "<gray>Blueprint has worn off"
 skills:
   farming:
     name: Farming
@@ -997,6 +1024,9 @@ skills:
   trading:
     name: Trading
     desc: "Trade with villagers and barter with piglins to earn Trading {xp_unit}"
+  building:
+    name: Building
+    desc: "Place processed blocks to earn Building {xp_unit}"
 sources:
   fishing:
     cod: Cod
@@ -1121,6 +1151,11 @@ sources:
     piglin_barter_crying_obsidian: Barter for Crying Obsidian
     piglin_barter_obsidian: Barter for Obsidian
     piglin_barter_quartz: Barter for Quartz
+  building:
+    place_basic: Place Basic Blocks
+    place_mid: Place Processed Blocks
+    place_noble: Place Noble Blocks
+    place_prestigious: Place Prestigious Blocks
 stats:
   strength:
     name: Strength
