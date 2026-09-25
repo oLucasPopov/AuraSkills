@@ -183,5 +183,19 @@ skills:
       max_level: 100
       check_cancelled: true
       check_multiplier_permissions: true
+  # === Fork skills ===
+  auraskills/building:
+    abilities:
+      - auraskills/spare_materials
+      - auraskills/builder
+      - auraskills/long_reach
+      - auraskills/reclaimer
+      - auraskills/steady_hands
+    mana_ability: auraskills/blueprint
+    options:
+      enabled: true
+      max_level: 100
+      check_cancelled: true
+      check_multiplier_permissions: true
 # === Fork skills ===
-file_version: 2
+file_version: 3

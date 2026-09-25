@@ -96,7 +96,13 @@ public enum Abilities implements Ability {
     MERCHANT("trading"),
     CHARISMA("trading"),
     MASTER_NEGOTIATOR("trading"),
-    GUILD_REPUTATION("trading");
+    GUILD_REPUTATION("trading"),
+    // === Fork skills: building, culinary, engineering ===
+    SPARE_MATERIALS("building"),
+    BUILDER("building"),
+    LONG_REACH("building"),
+    RECLAIMER("building"),
+    STEADY_HANDS("building");
 
     private final NamespacedId id;
     private final boolean hasSecondaryValue;

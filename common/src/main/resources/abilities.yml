@@ -638,4 +638,40 @@ abilities:
     level_up: 5
     max_level: 0
 # === Fork skills ===
-file_version: 4
+  auraskills/spare_materials:
+    enabled: true
+    base_value: 1.5
+    value_per_level: 1.5
+    unlock: '{start}+1'
+    level_up: 5
+    max_level: 7
+  auraskills/builder:
+    enabled: true
+    base_value: 10.0
+    value_per_level: 10.0
+    unlock: '{start}+2'
+    level_up: 5
+    max_level: 0
+  auraskills/long_reach:
+    enabled: true
+    base_value: 0.3
+    value_per_level: 0.3
+    unlock: '{start}+3'
+    level_up: 5
+    max_level: 5
+  auraskills/reclaimer:
+    enabled: true
+    base_value: 3.0
+    value_per_level: 3.0
+    unlock: '{start}+4'
+    level_up: 5
+    max_level: 10
+  auraskills/steady_hands:
+    enabled: true
+    base_value: 20.0
+    value_per_level: 20.0
+    unlock: '{start}+5'
+    level_up: 5
+    max_level: 5
+# === Fork skills ===
+file_version: 5

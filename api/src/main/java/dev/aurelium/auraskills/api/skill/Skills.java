@@ -33,7 +33,9 @@ public enum Skills implements Skill {
     // === Fork skills: trading, husbandry, smithing ===
     SMITHING(Abilities.SMITH),
     HUSBANDRY(Abilities.RANCHER),
-    TRADING(Abilities.MERCHANT);
+    TRADING(Abilities.MERCHANT),
+    // === Fork skills: building, culinary, engineering ===
+    BUILDING(Abilities.BUILDER);
 
     @Inject
     private SkillProvider provider;
