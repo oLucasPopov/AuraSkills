@@ -85,7 +85,7 @@ method used for the 26.2 source expansion), never guessed.
 |---|---|---|---|
 | spare_materials | % chance to not consume the block when placing | 1.5 / 1.5 | 7 (≈10%) |
 | builder | +% Building XP | 10 / 10 | 0 |
-| long_reach | +block placement reach via `BLOCK_INTERACTION_RANGE` attribute | 0.3 / 0.3 | 5 (+1.8) |
+| long_reach | +block placement reach via `BLOCK_INTERACTION_RANGE` attribute | 0.3 / 0.3 | 5 (+1.5) |
 | reclaimer | % chance to drop the block back when breaking a block you placed | 3 / 3 | 10 (30%) |
 | steady_hands | % fall damage reduction while holding a block | 20 / 20 | 5 (100%) |
 

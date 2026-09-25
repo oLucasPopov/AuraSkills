@@ -233,7 +233,7 @@ The potion splash source (`type: potion_splash`) gives XP when a player uses a s
 
 ### Smelting
 
-The smelting source (`type: smelting`) gives XP when a player manually extracts the result from a furnace, blast furnace or smoker. The XP given is the `xp` key multiplied by the amount of items extracted. Items collected automatically by hoppers give no XP.
+The smelting source (`type: smelting`) gives XP when a player manually extracts the result from a furnace, blast furnace or smoker. The XP given is the `xp` key multiplied by the amount of items extracted. Items collected automatically by hoppers give no XP. Cooking food on a campfire also gives smelting XP, attributed to the player who placed the food on the campfire within a 10-minute attribution window.
 
 #### Options
 
