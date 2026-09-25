@@ -16,9 +16,15 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class Banquet extends ReadiedManaAbility {
 
     private static final double RADIUS = 10;
+
+    private final Map<UUID, Long> readyTicks = new ConcurrentHashMap<>();
 
     public Banquet(AuraSkills plugin) {
         super(plugin, ManaAbilities.BANQUET, ManaAbilityMessage.BANQUET_START, ManaAbilityMessage.BANQUET_END,
@@ -52,7 +58,22 @@ public class Banquet extends ReadiedManaAbility {
         Player player = event.getPlayer();
         if (!isHoldingMaterial(player)) return;
         if (failsChecks(player)) return;
-        checkActivation(player); // No-op unless the ability is readied
+        // The click that readied the ability must never activate it; handler
+        // ordering between this method and onReady is JVM-unspecified
+        Long readyTick = readyTicks.get(player.getUniqueId());
+        if (readyTick != null && readyTick == player.getWorld().getGameTime()) return;
+        if (checkActivation(player)) { // No-op unless the ability is readied
+            readyTicks.remove(player.getUniqueId());
+        }
+    }
+
+    @Override
+    public void onReady(PlayerInteractEvent event) {
+        boolean wasReady = plugin.getUser(event.getPlayer()).getManaAbilityData(manaAbility).isReady();
+        super.onReady(event);
+        if (!wasReady && plugin.getUser(event.getPlayer()).getManaAbilityData(manaAbility).isReady()) {
+            readyTicks.put(event.getPlayer().getUniqueId(), event.getPlayer().getWorld().getGameTime());
+        }
     }
 
     @Override
