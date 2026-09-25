@@ -1,23 +1,29 @@
 package dev.aurelium.auraskills.bukkit.skills.husbandry;
 
 import dev.aurelium.auraskills.api.mana.ManaAbilities;
+import dev.aurelium.auraskills.api.util.NumberUtil;
 import dev.aurelium.auraskills.bukkit.AuraSkills;
 import dev.aurelium.auraskills.bukkit.mana.ReadiedManaAbility;
+import dev.aurelium.auraskills.common.mana.ManaAbilityData;
 import dev.aurelium.auraskills.common.message.type.ManaAbilityMessage;
 import dev.aurelium.auraskills.common.scheduler.Task;
 import dev.aurelium.auraskills.common.scheduler.TaskRunnable;
 import dev.aurelium.auraskills.common.user.User;
 import dev.aurelium.auraskills.common.util.text.TextUtil;
+import dev.aurelium.auraskills.paper.util.EntityPathUtil;
+import dev.aurelium.auraskills.paper.util.PaperUtil;
 import org.bukkit.Sound;
 import org.bukkit.entity.Animals;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Sittable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.util.Vector;
 
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
@@ -57,7 +63,36 @@ public class AnimalWhisperer extends ReadiedManaAbility {
 
         Player player = event.getPlayer();
         if (failsChecks(player)) return;
+        // Clicking an animal with wheat is the natural gesture, so ready the ability
+        // on the first click instead of requiring a click on air first
+        if (tryReady(player)) return;
         checkActivation(player);
+    }
+
+    private boolean tryReady(Player player) {
+        if (!isHoldingMaterial(player)) return false;
+        User user = plugin.getUser(player);
+        if (user.getManaAbilityLevel(manaAbility) <= 0) return false;
+        ManaAbilityData data = user.getManaAbilityData(manaAbility);
+        if (data.isActivated() || data.isReady()) return false;
+        Locale locale = user.getLocale();
+        if (data.getCooldown() != 0) {
+            if (data.getErrorTimer() == 0) {
+                plugin.getAbilityManager().sendMessage(player, plugin.getMsg(ManaAbilityMessage.NOT_READY, locale).replace("{cooldown}",
+                        NumberUtil.format0((double) data.getCooldown() / 20)));
+                data.setErrorTimer(2);
+            }
+            return true;
+        }
+        data.setReady(true);
+        plugin.getAbilityManager().sendMessage(player, plugin.getMsg(ManaAbilityMessage.valueOf(manaAbility.name() + "_RAISE"), locale));
+        plugin.getScheduler().scheduleSync(() -> {
+            if (!data.isActivated() && data.isReady()) {
+                data.setReady(false);
+                plugin.getAbilityManager().sendMessage(player, plugin.getMsg(ManaAbilityMessage.valueOf(manaAbility.name() + "_LOWER"), locale));
+            }
+        }, 4000, TimeUnit.MILLISECONDS);
+        return true;
     }
 
     @Override
@@ -83,16 +118,24 @@ public class AnimalWhisperer extends ReadiedManaAbility {
         if (grown == null) return;
         for (Entity entity : player.getNearbyEntities(radius, radius, radius)) {
             if (!(entity instanceof Animals animals)) continue;
+            if (entity instanceof Sittable sittable && sittable.isSitting()) continue;
             if (!animals.isAdult()) {
                 // One growth step per activation per baby
                 if (grown.add(animals.getUniqueId())) {
                     animals.setAge(animals.getAge() + 2400); // 2 minutes of growth
                 }
-                continue;
             }
-            // Gentle pull toward the player ("follow without bait")
-            Vector direction = player.getLocation().toVector().subtract(entity.getLocation().toVector());
-            if (direction.lengthSquared() > 4) {
+            double distanceSq = entity.getLocation().distanceSquared(player.getLocation());
+            if (PaperUtil.IS_PAPER) {
+                // Real pathfinding so animals actually walk to the player
+                if (distanceSq > 9) {
+                    EntityPathUtil.moveTo(entity, player.getLocation(), 1.2);
+                } else {
+                    EntityPathUtil.stopPath(entity);
+                }
+            } else if (distanceSq > 4) {
+                // Fallback for non-Paper servers: gentle velocity pull
+                Vector direction = player.getLocation().toVector().subtract(entity.getLocation().toVector());
                 direction.normalize().multiply(0.15);
                 entity.setVelocity(entity.getVelocity().add(direction).setY(Math.max(entity.getVelocity().getY(), 0)));
             }
