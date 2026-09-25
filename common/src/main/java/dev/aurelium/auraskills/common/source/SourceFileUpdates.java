@@ -15,6 +15,8 @@ public class SourceFileUpdates {
 
     public SourceFileUpdates() {
         define(Skills.FORAGING, 1, this::replaceTrunkAndLeafWithMaxBlocks);
+        // === Fork skills: building, culinary, engineering ===
+        define(Skills.SMITHING, 3, this::removeSmeltFood);
     }
 
     public Map<Skill, Map<Integer, ConfigUpdate>> getFileUpdates() {
@@ -44,6 +46,9 @@ public class SourceFileUpdates {
                 }
             }
         }
+    }
+    private void removeSmeltFood(ConfigurationNode embedded, ConfigurationNode user) {
+        user.node("sources").removeChild("smelt_food");
     }
 
 }

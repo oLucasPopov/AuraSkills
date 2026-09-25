@@ -197,5 +197,18 @@ skills:
       max_level: 100
       check_cancelled: true
       check_multiplier_permissions: true
+  auraskills/culinary:
+    abilities:
+      - auraskills/extra_servings
+      - auraskills/chef
+      - auraskills/hearty_meals
+      - auraskills/gourmet
+      - auraskills/well_fed
+    mana_ability: auraskills/banquet
+    options:
+      enabled: true
+      max_level: 100
+      check_cancelled: true
+      check_multiplier_permissions: true
 # === Fork skills ===
 file_version: 3

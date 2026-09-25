@@ -74,21 +74,6 @@ sources:
     xp: 0.5
     menu_item:
       material: iron_nugget
-  smelt_food:
-    type: smelting
-    items:
-      - cooked_beef
-      - cooked_porkchop
-      - cooked_chicken
-      - cooked_mutton
-      - cooked_rabbit
-      - cooked_cod
-      - cooked_salmon
-      - baked_potato
-      - dried_kelp
-    xp: 1.0
-    menu_item:
-      material: cooked_beef
   smelt_glazed_terracotta:
     type: smelting
     items:
@@ -295,4 +280,4 @@ sources:
     menu_item:
       material: netherite_upgrade_smithing_template
 
-file_version: 2
+file_version: 3

@@ -1114,6 +1114,12 @@ sources:
     craft_leather_horse_armor: Craft Leather Horse Armor
     craft_utility_tools: Craft Utility Tools
     craft_smithing_templates: Duplicate Smithing Templates
+    craft_bread_and_snacks: Bake Bread and Snacks
+    craft_soups: Cook Soups and Stews
+    craft_rich_meals: Cook Rich Meals
+    craft_cake: Bake a Cake
+    craft_honey: Bottle Honey
+    craft_golden_food: Craft Golden Food
   breeding:
     breed_common: Breed Farm Animals
     breed_uncommon: Breed Small Livestock

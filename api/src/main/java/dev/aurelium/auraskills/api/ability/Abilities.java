@@ -102,7 +102,12 @@ public enum Abilities implements Ability {
     BUILDER("building"),
     LONG_REACH("building"),
     RECLAIMER("building"),
-    STEADY_HANDS("building");
+    STEADY_HANDS("building"),
+    EXTRA_SERVINGS("culinary"),
+    CHEF("culinary"),
+    HEARTY_MEALS("culinary"),
+    GOURMET("culinary"),
+    WELL_FED("culinary");
 
     private final NamespacedId id;
     private final boolean hasSecondaryValue;

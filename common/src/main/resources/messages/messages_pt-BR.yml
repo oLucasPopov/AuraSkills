@@ -884,6 +884,12 @@ sources:
     craft_leather_horse_armor: Fabrique Armadura de Couro para Cavalo
     craft_utility_tools: Fabrique Ferramentas Utilitárias
     craft_smithing_templates: Duplique Moldes de Ferraria
+    craft_bread_and_snacks: Asse Pão e Petiscos
+    craft_soups: Cozinhe Sopas e Ensopados
+    craft_rich_meals: Cozinhe Refeições Ricas
+    craft_cake: Asse um Bolo
+    craft_honey: Engarrafe Mel
+    craft_golden_food: Fabrique Comida Dourada
   breeding:
     breed_common: Procrie Animais de Fazenda
     breed_uncommon: Procrie Animais Pequenos

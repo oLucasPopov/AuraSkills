@@ -1,0 +1,65 @@
+sources:
+  smelt_food:
+    type: smelting
+    items:
+      - cooked_beef
+      - cooked_porkchop
+      - cooked_chicken
+      - cooked_mutton
+      - cooked_rabbit
+      - cooked_cod
+      - cooked_salmon
+      - baked_potato
+      - dried_kelp
+    xp: 1.0
+    menu_item:
+      material: cooked_beef
+  craft_bread_and_snacks:
+    type: crafting
+    items:
+      - bread
+      - cookie
+    xp: 1.5
+    menu_item:
+      material: bread
+  craft_soups:
+    type: crafting
+    items:
+      - mushroom_stew
+      - beetroot_soup
+      - suspicious_stew
+    xp: 2.5
+    menu_item:
+      material: mushroom_stew
+  craft_rich_meals:
+    type: crafting
+    items:
+      - pumpkin_pie
+      - rabbit_stew
+    xp: 4.0
+    menu_item:
+      material: pumpkin_pie
+  craft_cake:
+    type: crafting
+    items:
+      - cake
+    xp: 8.0
+    menu_item:
+      material: cake
+  craft_honey:
+    type: crafting
+    items:
+      - honey_bottle
+    xp: 2.0
+    menu_item:
+      material: honey_bottle
+  craft_golden_food:
+    type: crafting
+    items:
+      - golden_carrot
+      - golden_apple
+    xp: 10.0
+    menu_item:
+      material: golden_carrot
+
+file_version: 1
