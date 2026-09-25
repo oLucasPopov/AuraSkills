@@ -78,7 +78,11 @@ public enum ManaAbilityMessage implements MessageKey {
     BANQUET_START,
     BANQUET_END,
     BANQUET_RAISE,
-    BANQUET_LOWER;
+    BANQUET_LOWER,
+    POWER_SURGE_START,
+    POWER_SURGE_END,
+    POWER_SURGE_RAISE,
+    POWER_SURGE_LOWER;
 
     private final String path;
 

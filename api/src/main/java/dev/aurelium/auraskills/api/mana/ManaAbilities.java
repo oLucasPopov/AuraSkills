@@ -24,7 +24,8 @@ public enum ManaAbilities implements ManaAbility {
     GRAND_BARGAIN,
     // === Fork skills: building, culinary, engineering ===
     BLUEPRINT,
-    BANQUET;
+    BANQUET,
+    POWER_SURGE;
 
     @Inject
     private ManaAbilityProvider provider;

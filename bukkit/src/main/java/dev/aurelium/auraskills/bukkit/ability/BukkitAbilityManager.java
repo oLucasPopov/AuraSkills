@@ -9,6 +9,7 @@ import dev.aurelium.auraskills.bukkit.skills.culinary.CulinaryAbilities;
 import dev.aurelium.auraskills.bukkit.skills.defense.DefenseAbilities;
 import dev.aurelium.auraskills.bukkit.skills.enchanting.EnchantingAbilities;
 import dev.aurelium.auraskills.bukkit.skills.endurance.EnduranceAbilities;
+import dev.aurelium.auraskills.bukkit.skills.engineering.EngineeringAbilities;
 import dev.aurelium.auraskills.bukkit.skills.excavation.ExcavationAbilities;
 import dev.aurelium.auraskills.bukkit.skills.farming.FarmingAbilities;
 import dev.aurelium.auraskills.bukkit.skills.fighting.FightingAbilities;
@@ -59,6 +60,7 @@ public class BukkitAbilityManager extends AbilityManager {
         // === Fork skills: building, culinary, engineering ===
         registerAbilityImpl(new BuildingAbilities(plugin));
         registerAbilityImpl(new CulinaryAbilities(plugin));
+        registerAbilityImpl(new EngineeringAbilities(plugin));
     }
 
     @Override

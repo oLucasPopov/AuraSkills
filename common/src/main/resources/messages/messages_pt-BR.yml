@@ -332,6 +332,26 @@ abilities:
     name: Bem Alimentado
     desc: "Comer comida cozida ou fabricada concede Regeneração por {value} segundos."
     info: "Regeneração por {value}s"
+  spare_parts:
+    name: Peças Sobressalentes
+    desc: "Concede {value}% de chance de drops dobrados ao quebrar mecanismos."
+    info: "+{value}% de Chance de Drop Dobrado"
+  engineer:
+    name: Engenheiro
+    desc: "Concede +{value}% de {xp_unit} de Engenharia."
+    info: "+{value}% de {xp_unit} de Engenharia"
+  efficient_crafting:
+    name: Fabricação Eficiente
+    desc: "Concede {value}% de chance de não consumir um ingrediente ao fabricar componentes."
+    info: "+{value}% de Chance de Economizar Ingrediente"
+  railroad_baron:
+    name: Barão da Ferrovia
+    desc: "Carrinhos que você conduz viajam {value}% mais rápido."
+    info: "+{value}% de Velocidade de Carrinho"
+  tinkerers_luck:
+    name: Sorte de Inventor
+    desc: "Concede {value}% de chance de uma fabricação de componente render o dobro."
+    info: "+{value}% de Chance de Fabricação Dobrada"
 acf:
   core:
     permission_denied: "<red>Desculpe, mas você não tem permissão para executar este comando."
@@ -765,6 +785,13 @@ mana_abilities:
     lower: "<gray>Você abaixa a tigela"
     start: "<gold>Banquete Ativado! <gray>(-{mana} {mana_unit})"
     end: "<gray>O banquete terminou"
+  power_surge:
+    name: Surto de Energia
+    desc: "Por {value} segundos, fabricações de componentes têm 50% de chance de render o dobro. <1>[Clique com redstone, depois clique numa bancada]"
+    raise: "<gray>Você carrega um punhado de redstone"
+    lower: "<gray>Você guarda a redstone"
+    start: "<gold>Surto de Energia Ativado! <gray>(-{mana} {mana_unit})"
+    end: "<gray>Surto de Energia acabou"
 skills:
   farming:
     name: Agricultura
@@ -827,6 +854,9 @@ skills:
   culinary:
     name: Culinária
     desc: "Cozinhe e fabrique comidas para ganhar {xp_unit} de Culinária"
+  engineering:
+    name: Engenharia
+    desc: "Fabrique e coloque componentes mecânicos para ganhar {xp_unit} de Engenharia"
 sources:
   fishing:
     cod: Bacalhau
@@ -920,6 +950,15 @@ sources:
     craft_cake: Asse um Bolo
     craft_honey: Engarrafe Mel
     craft_golden_food: Fabrique Comida Dourada
+    craft_bulk_rail: Fabrique Trilhos
+    craft_special_rail: Fabrique Trilhos Especiais
+    craft_basic_components: Fabrique Componentes Básicos
+    craft_plates_and_doors: Fabrique Chapas e Portas de Ferro
+    craft_mid_components: Fabrique Componentes
+    craft_advanced_components: Fabrique Componentes Avançados
+    craft_utility_vehicles: Fabrique Carrinhos Utilitários
+    craft_heavy_components: Fabrique Componentes Pesados
+    craft_jukebox: Fabrique uma Jukebox
   breeding:
     breed_common: Procrie Animais de Fazenda
     breed_uncommon: Procrie Animais Pequenos
@@ -962,6 +1001,9 @@ sources:
     place_mid: Coloque Blocos Processados
     place_noble: Coloque Blocos Nobres
     place_prestigious: Coloque Blocos Prestigiados
+    place_rail: Assente Trilhos
+    place_basic_components: Coloque Componentes Básicos
+    place_components: Coloque Componentes
 stats:
   strength:
     name: Força
@@ -1035,4 +1077,4 @@ units:
   mana: Mana
   hp: HP
   xp: XP
-file_version: 40
+file_version: 41

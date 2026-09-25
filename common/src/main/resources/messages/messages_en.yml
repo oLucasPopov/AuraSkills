@@ -392,6 +392,26 @@ abilities:
     name: Well Fed
     desc: "Eating cooked or crafted food grants Regeneration for {value} seconds."
     info: "{value}s Regeneration"
+  spare_parts:
+    name: Spare Parts
+    desc: "Grants a {value}% chance of double drops when breaking mechanisms."
+    info: "+{value}% Double Drop Chance"
+  engineer:
+    name: Engineer
+    desc: "Grants +{value}% Engineering {xp_unit}."
+    info: "+{value}% Engineering {xp_unit}"
+  efficient_crafting:
+    name: Efficient Crafting
+    desc: "Grants a {value}% chance to not consume one ingredient when crafting components."
+    info: "+{value}% Ingredient Save Chance"
+  railroad_baron:
+    name: Railroad Baron
+    desc: "Minecarts you ride travel {value}% faster."
+    info: "+{value}% Minecart Speed"
+  tinkerers_luck:
+    name: Tinkerer's Luck
+    desc: "Grants a {value}% chance for a component craft to yield double results."
+    info: "+{value}% Double Craft Chance"
 acf:
   core:
     permission_denied: "<red>I'm sorry, but you do not have permission to perform this command."
@@ -995,6 +1015,13 @@ mana_abilities:
     lower: "<gray>You lower the bowl"
     start: "<gold>Banquet Activated! <gray>(-{mana} {mana_unit})"
     end: "<gray>The banquet has ended"
+  power_surge:
+    name: Power Surge
+    desc: "For {value} seconds, component crafts have a 50% chance of double output. <1>[Right click redstone dust, then click a crafting table]"
+    raise: "<gray>You charge a handful of redstone"
+    lower: "<gray>You pocket the redstone"
+    start: "<gold>Power Surge Activated! <gray>(-{mana} {mana_unit})"
+    end: "<gray>Power Surge has worn off"
 skills:
   farming:
     name: Farming
@@ -1057,6 +1084,9 @@ skills:
   culinary:
     name: Culinary
     desc: "Cook and craft food to earn Culinary {xp_unit}"
+  engineering:
+    name: Engineering
+    desc: "Craft and place mechanical components to earn Engineering {xp_unit}"
 sources:
   fishing:
     cod: Cod
@@ -1150,6 +1180,15 @@ sources:
     craft_cake: Bake a Cake
     craft_honey: Bottle Honey
     craft_golden_food: Craft Golden Food
+    craft_bulk_rail: Craft Rails
+    craft_special_rail: Craft Special Rails
+    craft_basic_components: Craft Basic Components
+    craft_plates_and_doors: Craft Plates and Iron Doors
+    craft_mid_components: Craft Components
+    craft_advanced_components: Craft Advanced Components
+    craft_utility_vehicles: Craft Utility Minecarts
+    craft_heavy_components: Craft Heavy Components
+    craft_jukebox: Craft a Jukebox
   breeding:
     breed_common: Breed Farm Animals
     breed_uncommon: Breed Small Livestock
@@ -1192,6 +1231,9 @@ sources:
     place_mid: Place Processed Blocks
     place_noble: Place Noble Blocks
     place_prestigious: Place Prestigious Blocks
+    place_rail: Lay Rails
+    place_basic_components: Place Basic Components
+    place_components: Place Components
 stats:
   strength:
     name: Strength
@@ -1265,4 +1307,4 @@ units:
   mana: Mana
   hp: HP
   xp: XP
-file_version: 40
+file_version: 41
