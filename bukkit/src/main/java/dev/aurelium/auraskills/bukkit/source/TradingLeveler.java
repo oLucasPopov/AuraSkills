@@ -105,7 +105,9 @@ public class TradingLeveler extends SourceLeveler {
             for (ItemStack outcome : event.getOutcome()) {
                 if (source.getBarterItem() == null || source.getBarterItem().equalsIgnoreCase(outcome.getType().name())) {
                     double decay = recordAndGetDecay(player.getUniqueId(), merchantKey, outcome.getType().name());
-                    total += source.getXp() * outcome.getAmount() * decay;
+                    // Flat XP per barter: piglin drops come in stacks (e.g. 9-36 iron nuggets),
+                    // so multiplying by the amount would make gold farms trivialize this skill
+                    total += source.getXp() * decay;
                 }
             }
             if (total <= 0) continue;
