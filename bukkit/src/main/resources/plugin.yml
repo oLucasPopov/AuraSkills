@@ -67,6 +67,13 @@ permissions:
       auraskills.skill.sorcery: true
       auraskills.skill.healing: true
       auraskills.skill.forging: true
+      # === Fork skills ===
+      auraskills.skill.trading: true
+      auraskills.skill.husbandry: true
+      auraskills.skill.smithing: true
+      auraskills.skill.building: true
+      auraskills.skill.culinary: true
+      auraskills.skill.engineering: true
     default: true
 
   auraskills.command.item.*:
